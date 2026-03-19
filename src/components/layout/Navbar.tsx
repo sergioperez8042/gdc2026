@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <Image
-            src="/logos/gdc-logo-full.jpg"
+            src="/logos/gdc-logo-full.png"
             alt="GDC"
             width={44}
             height={44}

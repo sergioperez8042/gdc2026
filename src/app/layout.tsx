@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cormorant_Garamond, Lato } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const inter = Inter({
+const lato = Lato({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
   display: "swap",
 });
 
@@ -83,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${playfair.variable} ${inter.variable} antialiased`}>
+    <html className={`${cormorant.variable} ${lato.variable} antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -95,7 +97,7 @@ export default function RootLayout({
               description:
                 "Importacion y exportacion de cafe premium y distribucion de alimentos de calidad superior.",
               url: "https://globaldistribuidora.com",
-              logo: "https://globaldistribuidora.com/logos/gdc-logo-full.jpg",
+              logo: "https://globaldistribuidora.com/logos/gdc-logo-full.png",
               contactPoint: [
                 {
                   "@type": "ContactPoint",

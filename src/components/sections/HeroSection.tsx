@@ -33,7 +33,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           className="mb-6"
         >
           <Image
-            src="/logos/gdc-logo-full.jpg"
+            src="/logos/gdc-logo-full.png"
             alt="Global Distribuidora y Comercializadora"
             width={200}
             height={200}
