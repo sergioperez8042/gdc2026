@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Globe2, ShieldCheck, Ship, Award } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -8,12 +7,7 @@ interface AboutSectionProps {
   dict: Dictionary;
 }
 
-const features = [
-  { key: "experience" as const, icon: Globe2 },
-  { key: "compliance" as const, icon: ShieldCheck },
-  { key: "speed" as const, icon: Ship },
-  { key: "quality" as const, icon: Award },
-];
+const featureKeys = ["experience", "compliance", "speed", "quality"] as const;
 
 export default function AboutSection({ dict }: AboutSectionProps) {
   return (
@@ -40,22 +34,17 @@ export default function AboutSection({ dict }: AboutSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {features.map((f, i) => {
-            const Icon = f.icon;
-            return (
-              <ScrollReveal key={f.key} delay={0.1 + i * 0.08} direction="up">
-                <div className="card-3d bg-dark-card border border-dark-border rounded-2xl p-7 text-center h-full">
-                  <div className="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-gold-400/20 to-coffee-500/10 flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6 text-gold-400" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-cream">
-                    {dict.about.highlights[f.key]}
-                  </h3>
-                  <div className="w-8 h-0.5 bg-gold-400/30 mx-auto mt-4 rounded-full" />
-                </div>
-              </ScrollReveal>
-            );
-          })}
+          {featureKeys.map((key, i) => (
+            <ScrollReveal key={key} delay={0.1 + i * 0.08} direction="up">
+              <div className="card-3d bg-dark-card border border-dark-border rounded-2xl p-7 text-center h-full relative overflow-hidden">
+                {/* Top gold accent line */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
+                <h3 className="font-heading text-xl font-bold text-cream mt-4">
+                  {dict.about.highlights[key]}
+                </h3>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Telescope } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -9,10 +8,9 @@ interface VisionSectionProps {
 
 export default function VisionSection({ dict }: VisionSectionProps) {
   return (
-    <section id="vision" className="py-20 md:py-28 bg-coffee-900/50 relative overflow-hidden">
+    <section id="vision" className="py-20 md:py-28 bg-dark relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark to-dark" />
 
-      {/* Floating bean */}
       <div className="absolute right-[10%] top-1/3 w-16 h-16 opacity-10 animate-float-slow pointer-events-none hidden lg:block">
         <Image src="/images/coffee-beans-dark.jpg" alt="" width={64} height={64} className="rounded-full" />
       </div>
@@ -29,13 +27,11 @@ export default function VisionSection({ dict }: VisionSectionProps) {
 
         <ScrollReveal delay={0.15}>
           <div className="bg-dark-card border border-dark-border rounded-3xl p-10 md:p-14 text-center glow-coffee">
-            <div className="w-16 h-16 mx-auto rounded-full bg-coffee-500/15 flex items-center justify-center mb-6">
-              <Telescope className="w-8 h-8 text-gold-400" strokeWidth={1.5} />
-            </div>
-            <p className="text-cream/70 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mb-8" />
+            <p className="text-cream/70 text-lg sm:text-xl md:text-2xl leading-relaxed font-light italic">
               {dict.vision.text}
             </p>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-8" />
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-8" />
           </div>
         </ScrollReveal>
       </div>
