@@ -20,7 +20,11 @@ export default function ContactForm({ dict }: ContactFormProps) {
     return (
       <div className="flex items-center justify-center rounded-2xl bg-fresh-50 border border-fresh-200 p-12 text-center">
         <div>
-          <div className="text-4xl mb-4">✓</div>
+          <div className="w-12 h-12 mx-auto rounded-full bg-fresh-100 flex items-center justify-center mb-4">
+            <svg className="w-6 h-6 text-fresh-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
           <p className="text-fresh-700 text-lg font-medium">{dict.success}</p>
         </div>
       </div>

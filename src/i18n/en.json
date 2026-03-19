@@ -1,70 +1,84 @@
 {
   "nav": {
-    "about": "About Us",
+    "about": "About",
     "services": "Services",
     "mission": "Mission",
     "vision": "Vision",
     "contact": "Contact"
   },
   "hero": {
-    "tagline": "Connecting global markets with superior quality food",
-    "subtitle": "Import, export and distribution of premium coffee and food products",
-    "cta": "Contact Us"
+    "tagline": "From origin to your table, with full traceability",
+    "subtitle": "Premium specialty coffee and comprehensive food distribution for international markets",
+    "cta": "Request a quote",
+    "stats": {
+      "countries": "Countries",
+      "traceability": "Traceability",
+      "coldChain": "Cold chain",
+      "countriesValue": "5+",
+      "traceabilityValue": "100%",
+      "coldChainValue": "24/7"
+    }
   },
   "about": {
-    "title": "Who We Are",
-    "p1": "At Global Distribuidora y Comercializadora, C.A., we are more than importers and exporters; we are essential facilitators who bring the flavors of the world to your table and unlock your product's potential in international markets.",
-    "p2": "We were founded with a clear vision: to overcome the logistical barriers that once limited access to high-quality food products.",
-    "p3": "Today, we operate as a comprehensive strategic partner, managing the complexities of cross-border trade from start to finish, with specialization in two critical areas."
+    "title": "Your Strategic Partner in International Trade",
+    "p1": "At Global Distribuidora y Comercializadora, C.A., we don't just import and export -- we eliminate the logistical barriers that slow your access to high-quality food products.",
+    "p2": "We manage the complexity of cross-border trade from start to finish so you can focus on growing your business.",
+    "p3": "Two areas of expertise that set us apart:",
+    "highlights": {
+      "experience": "Proven experience",
+      "compliance": "Full regulatory compliance",
+      "speed": "Agile and secure logistics",
+      "quality": "Uncompromising quality"
+    }
   },
   "services": {
     "title": "Our Services",
     "coffee": {
-      "title": "Commitment to Origin: Our Coffee",
-      "description": "Our journey began with a passion for coffee. We are dedicated to the import and export of exceptional coffee beans, carefully selecting premium and specialty lots and ensuring full traceability from farm to roaster.",
+      "title": "Premium Specialty Coffee",
+      "description": "We select premium and specialty lots with full traceability from farm to roaster. Every bean tells an origin story.",
       "points": [
-        "Premium and specialty coffee beans",
-        "Full farm-to-roaster traceability",
-        "Rigorous lot selection",
-        "Quality and aroma preservation throughout the logistics chain"
+        "Hand-selected premium and specialty coffee beans",
+        "100% guaranteed farm-to-roaster traceability",
+        "Rigorous quality control on every lot",
+        "Aroma and flavor profile preservation throughout the chain"
       ]
     },
     "food": {
-      "title": "Global Efficiency: Food and Distribution",
-      "description": "We complement our coffee expertise with a strong capability in the distribution and commercialization of all types of food products.",
+      "title": "Comprehensive Food Distribution",
+      "description": "From fresh products with impeccable cold chain to dry and packaged goods. Your cargo arrives at destination in optimal conditions.",
       "points": [
-        "Fresh and perishable products",
-        "Impeccable cold-chain management",
-        "Dry and packaged products",
-        "Speed, safety, and full regulatory compliance"
+        "24/7 monitored cold chain for perishables",
+        "Dry, packaged, and fresh products",
+        "International sanitary regulatory compliance",
+        "Speed and safety in every shipment"
       ]
     }
   },
   "mission": {
     "title": "Mission",
-    "text": "To connect global markets with superior-quality food products by importing and exporting exceptional coffee and providing robust logistics solutions for the efficient distribution and commercialization of all types of food products. We are committed to operating with unwavering efficiency, strict regulatory compliance, and complete customer satisfaction throughout the entire supply chain."
+    "text": "To connect global markets with superior-quality food products by importing and exporting exceptional coffee and providing robust logistics solutions for the efficient distribution and commercialization of all types of food products."
   },
   "vision": {
     "title": "Vision",
-    "text": "To become a leading global benchmark in the food supply chain, recognized for our excellence in the import and export of gourmet coffee and for our agile and innovative distribution capabilities across all categories of food products, setting the standards for trust, efficiency, and sustainability in international trade."
+    "text": "To become a leading global benchmark in the food supply chain, recognized for our excellence in gourmet coffee and our agile and innovative distribution capabilities, setting the standards for trust, efficiency, and sustainability in international trade."
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "We are ready to be your strategic partner in international food trade",
+    "title": "Let's Talk About Your Next Shipment",
+    "subtitle": "Receive a personalized quote in less than 24 hours",
     "form": {
       "name": "Full name",
       "email": "Email address",
       "phone": "Phone (optional)",
-      "subject": "Subject",
+      "subject": "What do you need?",
       "subjects": {
         "general": "General inquiry",
-        "coffee": "Premium coffee",
+        "coffee": "Import/export coffee",
         "distribution": "Food distribution",
         "other": "Other"
       },
-      "message": "Message",
-      "send": "Send message",
-      "success": "Message sent! We will get back to you soon."
+      "message": "Tell us about your project or need...",
+      "send": "Send request",
+      "success": "Request sent. We'll respond within 24 hours."
     },
     "info": {
       "address": "Address",

@@ -33,8 +33,11 @@ export default function VisionSection({ dict }: VisionSectionProps) {
         <ScrollReveal delay={0.15}>
           <div className="text-center">
             <div className="bg-white rounded-3xl shadow-sm border border-coffee-100 p-10 md:p-14">
-              <div className="text-coffee-300 text-6xl font-heading leading-none mb-6">
-                🌎
+              <div className="w-16 h-16 mx-auto rounded-full bg-coffee-100 flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-coffee-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                  <path strokeLinecap="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
+                </svg>
               </div>
               <p className="text-charcoal/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
                 {dict.vision.text}
