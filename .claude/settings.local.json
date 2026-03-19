@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__PDF_Tools_-_Fill__Analyze__Extract__View__read_pdf_content",
+      "mcp__PDF_Tools_-_Fill__Analyze__Extract__View__display_pdf",
+      "Bash(pdftoppm -v)",
+      "Bash(pdftotext '/Users/sergio/Downloads/PRESENTACION GDC2026.pdf' -)",
+      "Bash(pdfinfo \"/Users/sergio/Downloads/PRESENTACION GDC2026.pdf\")",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(bun --version)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias=\"@/*\" --turbopack --yes)"
+    ]
+  }
+}
