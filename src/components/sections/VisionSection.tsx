@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Telescope } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -29,10 +30,7 @@ export default function VisionSection({ dict }: VisionSectionProps) {
         <ScrollReveal delay={0.15}>
           <div className="bg-dark-card border border-dark-border rounded-3xl p-10 md:p-14 text-center glow-coffee">
             <div className="w-16 h-16 mx-auto rounded-full bg-coffee-500/15 flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-                <path strokeLinecap="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
-              </svg>
+              <Telescope className="w-8 h-8 text-gold-400" strokeWidth={1.5} />
             </div>
             <p className="text-cream/70 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
               {dict.vision.text}

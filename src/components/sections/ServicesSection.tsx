@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CircleCheck } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -54,9 +55,7 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
                 <ul className="space-y-3">
                   {dict.services.coffee.points.map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                      <CircleCheck className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" strokeWidth={1.5} />
                       <span className="text-cream/50 text-sm">{point}</span>
                     </li>
                   ))}
@@ -91,9 +90,7 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
                 <ul className="space-y-3">
                   {dict.services.food.points.map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-fresh-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                      <CircleCheck className="w-5 h-5 text-fresh-400 shrink-0 mt-0.5" strokeWidth={1.5} />
                       <span className="text-cream/50 text-sm">{point}</span>
                     </li>
                   ))}
