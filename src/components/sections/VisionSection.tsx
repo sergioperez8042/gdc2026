@@ -1,5 +1,5 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import SectionHeading from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface VisionSectionProps {
@@ -8,43 +8,36 @@ interface VisionSectionProps {
 
 export default function VisionSection({ dict }: VisionSectionProps) {
   return (
-    <section id="vision" className="py-20 md:py-28 bg-coffee-50 relative overflow-hidden">
-      {/* Subtle globe watermark */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
-        <svg
-          width="500"
-          height="500"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          className="text-globe-500"
-        >
-          <circle cx="12" cy="12" r="10" strokeWidth="0.5" />
-          <path d="M2 12h20" strokeWidth="0.5" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeWidth="0.5" />
-        </svg>
+    <section id="vision" className="py-20 md:py-28 bg-coffee-900/50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-dark to-dark" />
+
+      {/* Floating bean */}
+      <div className="absolute right-[10%] top-1/3 w-16 h-16 opacity-10 animate-float-slow pointer-events-none hidden lg:block">
+        <Image src="/images/coffee-beans-dark.jpg" alt="" width={64} height={64} className="rounded-full" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
-          <SectionHeading title={dict.vision.title} />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-cream">
+              {dict.vision.title}
+            </h2>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto rounded-full" />
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="text-center">
-            <div className="bg-white rounded-3xl shadow-sm border border-coffee-100 p-10 md:p-14">
-              <div className="w-16 h-16 mx-auto rounded-full bg-coffee-100 flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-coffee-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
-                  <path strokeLinecap="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
-                </svg>
-              </div>
-              <p className="text-charcoal/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
-                {dict.vision.text}
-              </p>
-              {/* Gold divider */}
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-8" />
+          <div className="bg-dark-card border border-dark-border rounded-3xl p-10 md:p-14 text-center glow-coffee">
+            <div className="w-16 h-16 mx-auto rounded-full bg-coffee-500/15 flex items-center justify-center mb-6">
+              <svg className="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                <path strokeLinecap="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
+              </svg>
             </div>
+            <p className="text-cream/70 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
+              {dict.vision.text}
+            </p>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-8" />
           </div>
         </ScrollReveal>
       </div>
