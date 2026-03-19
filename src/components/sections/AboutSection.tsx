@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Globe2, ShieldCheck, Zap, Award } from "lucide-react";
+import { Globe2, ShieldCheck, Ship, Award } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -11,7 +11,7 @@ interface AboutSectionProps {
 const features = [
   { key: "experience" as const, icon: Globe2 },
   { key: "compliance" as const, icon: ShieldCheck },
-  { key: "speed" as const, icon: Zap },
+  { key: "speed" as const, icon: Ship },
   { key: "quality" as const, icon: Award },
 ];
 

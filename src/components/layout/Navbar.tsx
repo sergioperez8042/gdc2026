@@ -39,13 +39,10 @@ export default function Navbar() {
           <Image
             src="/logos/gdc-logo-full.png"
             alt="GDC"
-            width={44}
-            height={44}
-            className="rounded-full transition-transform duration-300 group-hover:scale-105"
+            width={70}
+            height={70}
+            className="transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="hidden sm:block text-white font-heading text-lg font-bold tracking-wide">
-            GDC
-          </span>
         </a>
 
         {/* Desktop Nav */}
