@@ -29,7 +29,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-globe-500/95 backdrop-blur-md shadow-lg py-3"
+          ? "bg-dark/90 backdrop-blur-md shadow-lg shadow-black/20 border-b border-dark-border py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -98,7 +98,7 @@ export default function Navbar() {
           menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-globe-500/95 backdrop-blur-md px-6 py-4 space-y-3">
+        <div className="bg-dark/95 backdrop-blur-md border-b border-dark-border px-6 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.id}

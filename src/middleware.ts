@@ -3,9 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const locales = ["es", "en"];
 const defaultLocale = "es";
 
-function getLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get("accept-language") || "";
-  if (acceptLanguage.includes("en")) return "en";
+function getLocale(): string {
   return defaultLocale;
 }
 
@@ -31,7 +29,7 @@ export function middleware(request: NextRequest) {
   if (pathnameHasLocale) return;
 
   // Redirect to locale-prefixed path
-  const locale = getLocale(request);
+  const locale = getLocale();
   request.nextUrl.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
