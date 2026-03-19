@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "mission": "Misión",
+    "vision": "Visión",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tagline": "Conectando mercados globales con alimentos de calidad superior",
+    "subtitle": "Importación, exportación y distribución de café premium y productos alimenticios",
+    "cta": "Contáctenos"
+  },
+  "about": {
+    "title": "Quiénes Somos",
+    "p1": "En Global Distribuidora y Comercializadora, C.A., somos más que importadores y exportadores; somos los facilitadores esenciales que llevan el sabor del mundo a su mesa y el potencial de su producto a mercados internacionales.",
+    "p2": "La creamos con la visión de superar las barreras logísticas que limitaban el acceso a productos alimenticios de alta calidad.",
+    "p3": "Hoy, operamos como un socio estratégico integral que gestiona la complejidad del comercio transfronterizo de principio a fin, especializándonos en dos áreas críticas."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "coffee": {
+      "title": "El Compromiso con el Origen: Nuestro Café",
+      "description": "Nuestro viaje comenzó con la pasión por el café. Nos dedicamos a la importación y exportación de granos de café de excelencia, seleccionando lotes premium y de especialidad, y asegurando una trazabilidad completa desde la finca hasta el tostador.",
+      "points": [
+        "Granos de café premium y de especialidad",
+        "Trazabilidad completa finca-tostador",
+        "Selección rigurosa de lotes",
+        "Preservación de calidad y aroma en toda la cadena logística"
+      ]
+    },
+    "food": {
+      "title": "La Eficiencia Global: Alimentos y Distribución",
+      "description": "Complementamos nuestra especialización en café con una robusta capacidad para la distribución y comercialización de toda clase de alimentos.",
+      "points": [
+        "Productos frescos y perecederos",
+        "Gestión impecable de cadena de frío",
+        "Productos secos y envasados",
+        "Rapidez, seguridad y cumplimiento normativo"
+      ]
+    }
+  },
+  "mission": {
+    "title": "Misión",
+    "text": "Conectar mercados globales con alimentos de calidad superior, importando y exportando café de excelencia y ofreciendo soluciones logísticas robustas para la distribución y comercialización ágil de toda clase de productos alimenticios. Nos dedicamos a operar con un compromiso inquebrantable con la eficiencia, el cumplimiento normativo y la satisfacción de nuestros clientes a lo largo de toda la cadena de suministro."
+  },
+  "vision": {
+    "title": "Visión",
+    "text": "Ser el principal referente global en la cadena de suministro de alimentos, reconocido por nuestra excelencia en la importación y exportación de café gourmet y nuestra capacidad de distribución ágil e innovadora para toda clase de productos alimenticios, definiendo los estándares de confianza, eficiencia y sostenibilidad en el comercio internacional."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos listos para ser su socio estratégico en el comercio internacional de alimentos",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono (opcional)",
+      "subject": "Asunto",
+      "subjects": {
+        "general": "Consulta general",
+        "coffee": "Café premium",
+        "distribution": "Distribución de alimentos",
+        "other": "Otro"
+      },
+      "message": "Mensaje",
+      "send": "Enviar mensaje",
+      "success": "¡Mensaje enviado! Nos pondremos en contacto pronto."
+    },
+    "info": {
+      "address": "Dirección",
+      "phones": "Teléfonos",
+      "emailLabel": "Correo"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "description": "Importación, exportación y distribución de café premium y productos alimenticios de calidad superior."
+  }
+}
