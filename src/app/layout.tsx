@@ -95,7 +95,7 @@ export default function RootLayout({
               description:
                 "Importacion y exportacion de cafe premium y distribucion de alimentos de calidad superior.",
               url: "https://globaldistribuidora.com",
-              logo: "https://globaldistribuidora.com/logos/gdc-logo-full.png",
+              logo: "https://globaldistribuidora.com/logos/gdc-logo-full.jpg",
               contactPoint: [
                 {
                   "@type": "ContactPoint",

@@ -15,7 +15,7 @@ export default function Footer({ dict }: FooterProps) {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logos/gdc-logo-stamp.png"
+                src="/logos/gdc-logo-full.jpg"
                 alt="GDC"
                 width={48}
                 height={48}
