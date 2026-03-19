@@ -11,61 +11,39 @@ interface HeroSectionProps {
 export default function HeroSection({ dict }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
-      {/* Background image with dark overlay */}
-      <Image
-        src="/images/dark-coffee-bg.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover opacity-30"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark" />
-
-      {/* Decorative floating coffee beans */}
-      <div className="absolute top-20 right-[10%] w-16 h-16 opacity-20 animate-float-slow pointer-events-none hidden lg:block">
-        <Image src="/images/coffee-beans-dark.jpg" alt="" width={64} height={64} className="rounded-full" />
-      </div>
-      <div className="absolute bottom-32 left-[8%] w-12 h-12 opacity-15 animate-float-delayed pointer-events-none hidden lg:block">
-        <Image src="/images/coffee-beans-dark.jpg" alt="" width={48} height={48} className="rounded-full" />
-      </div>
-
-      {/* Ambient glow */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-coffee-500/8 blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-gold-400/5 blur-[120px] pointer-events-none" />
+      {/* Decorative blobs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gold-400/15 blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] rounded-full bg-coffee-500/20 blur-[60px] pointer-events-none" />
+      <div className="absolute top-[20%] left-[15%] w-24 h-24 rounded-full bg-gold-400/20 pointer-events-none hidden lg:block" />
+      <div className="absolute bottom-[30%] left-[5%] w-14 h-14 rounded-full bg-gold-400/15 pointer-events-none hidden lg:block" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-6"
+              transition={{ duration: 0.6 }}
+              className="text-gold-400 text-sm font-bold uppercase tracking-[0.2em] mb-6"
             >
-              <span className="inline-block text-gold-400 text-sm font-bold uppercase tracking-[0.2em] border border-gold-400/30 rounded-full px-4 py-1.5">
-                Global Distribuidora y Comercializadora
-              </span>
-            </motion.div>
+              Global Distribuidora y Comercializadora
+            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
               className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-[1.05]"
             >
-              {dict.hero.tagline.split(",")[0]},
-              <span className="text-gold-300 italic block mt-1">
-                {dict.hero.tagline.split(",")[1]}
-              </span>
+              {dict.hero.tagline}
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-cream/50 text-lg max-w-lg mb-8 leading-relaxed"
             >
               {dict.hero.subtitle}
@@ -74,21 +52,18 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             <motion.a
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
               href="#contact"
               className="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-dark font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/25 active:scale-[0.97]"
             >
               {dict.hero.cta}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
             </motion.a>
 
             {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="flex gap-10 mt-12"
             >
               {[
@@ -104,25 +79,28 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             </motion.div>
           </div>
 
-          {/* Right: Floating coffee cup */}
+          {/* Right: Floating coffee image with blobs */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:flex justify-center"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:block"
           >
-            <div className="relative">
-              <div className="animate-float relative z-10">
-                <Image
-                  src="/images/coffee-cup.jpg"
-                  alt="Cafe premium"
-                  width={400}
-                  height={500}
-                  className="rounded-3xl shadow-2xl shadow-black/50 object-cover w-[350px] h-[450px]"
-                />
-              </div>
-              {/* Decorative glow behind */}
-              <div className="absolute inset-0 -m-8 rounded-full bg-coffee-500/15 blur-[80px]" />
+            {/* Decorative circles */}
+            <div className="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-gold-400/20" />
+            <div className="absolute -bottom-6 -right-6 w-20 h-20 rounded-full bg-gold-400/15" />
+            <div className="absolute top-1/2 -right-12 w-10 h-10 rounded-full bg-coffee-400/25" />
+
+            {/* Main image */}
+            <div className="animate-float relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
+              <Image
+                src="/images/coffee-cup.jpg"
+                alt="Cafe premium"
+                width={500}
+                height={600}
+                className="object-cover w-full h-[500px]"
+                priority
+              />
             </div>
           </motion.div>
         </div>

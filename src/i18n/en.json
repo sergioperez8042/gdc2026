@@ -20,10 +20,11 @@
     }
   },
   "about": {
+    "surtitle": "About us",
     "title": "Your Strategic Partner in International Trade",
-    "p1": "At Global Distribuidora y Comercializadora, C.A., we don't just import and export -- we eliminate the logistical barriers that slow your access to high-quality food products.",
+    "p1": "At Global Distribuidora y Comercializadora, C.A., we don't just import and export — we eliminate the logistical barriers that slow your access to high-quality food products.",
     "p2": "We manage the complexity of cross-border trade from start to finish so you can focus on growing your business.",
-    "p3": "Two areas of expertise that set us apart:",
+    "cta": "Learn more",
     "highlights": {
       "experience": "Proven experience",
       "compliance": "Full regulatory compliance",
@@ -32,6 +33,7 @@
     }
   },
   "services": {
+    "surtitle": "Specialties",
     "title": "Our Services",
     "coffee": {
       "title": "Premium Specialty Coffee",
@@ -78,7 +80,7 @@
       },
       "message": "Tell us about your project or need...",
       "send": "Send request",
-      "success": "Request sent. We'll respond within 24 hours."
+      "success": "Request sent! We'll respond within 24 hours."
     },
     "info": {
       "address": "Address",
