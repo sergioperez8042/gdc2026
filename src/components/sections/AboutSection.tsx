@@ -60,7 +60,7 @@ export default function AboutSection({ dict }: AboutSectionProps) {
               </p>
               <a
                 href="#services"
-                className="inline-block bg-gold-400 hover:bg-gold-500 text-dark font-bold px-7 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/20"
+                className="btn-shimmer inline-block bg-coffee-500 hover:bg-coffee-600 text-cream font-bold px-7 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-coffee-500/20"
               >
                 {dict.about.cta}
               </a>

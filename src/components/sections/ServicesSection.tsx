@@ -41,13 +41,13 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
 
           {/* Coffee card */}
           <ScrollReveal direction="left" delay={0.1}>
-            <div className="card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
+            <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
               <div className="relative rounded-2xl overflow-hidden mb-6 h-48">
                 <Image
                   src="/images/coffee-beans.jpg"
                   alt="Granos de café premium"
                   fill
-                  className="object-cover"
+                  className="object-cover service-card-img"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-3 right-3 bg-gold-400 text-dark text-xs font-bold px-3 py-1 rounded-full">
@@ -73,13 +73,13 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
 
           {/* Food card */}
           <ScrollReveal direction="right" delay={0.2}>
-            <div className="card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
+            <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
               <div className="relative rounded-2xl overflow-hidden mb-6 h-48">
                 <Image
                   src="/images/food-distribution.jpg"
                   alt="Distribución de alimentos"
                   fill
-                  className="object-cover"
+                  className="object-cover service-card-img"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-3 right-3 bg-fresh-500 text-white text-xs font-bold px-3 py-1 rounded-full">

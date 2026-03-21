@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeroSectionProps {
@@ -11,6 +12,9 @@ interface HeroSectionProps {
 export default function HeroSection({ dict }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
+      {/* Radial gradient behind title */}
+      <div className="absolute top-[20%] left-[20%] w-[600px] h-[600px] rounded-full bg-gradient-radial from-gold-400/8 to-transparent blur-[100px] pointer-events-none" />
+
       {/* Decorative blobs */}
       <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gold-400/15 blur-[80px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] rounded-full bg-coffee-500/20 blur-[60px] pointer-events-none" />
@@ -54,28 +58,30 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
               href="#contact"
-              className="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-dark font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/25 active:scale-[0.97]"
+              className="btn-shimmer inline-flex items-center gap-3 bg-coffee-500 hover:bg-coffee-600 text-cream font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-coffee-500/25 active:scale-[0.97]"
             >
               {dict.hero.cta}
             </motion.a>
 
-            {/* Stats */}
+            {/* Stats with glassmorphism + animated counters */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex gap-10 mt-12"
+              className="flex gap-4 mt-12"
             >
-              {[
-                { value: dict.hero.stats.countriesValue, label: dict.hero.stats.countries },
-                { value: dict.hero.stats.traceabilityValue, label: dict.hero.stats.traceability },
-                { value: dict.hero.stats.coldChainValue, label: dict.hero.stats.coldChain },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-heading font-bold text-gold-300">{stat.value}</div>
-                  <div className="text-cream/35 text-xs uppercase tracking-wider mt-0.5">{stat.label}</div>
-                </div>
-              ))}
+              <AnimatedCounter
+                value={dict.hero.stats.countriesValue}
+                label={dict.hero.stats.countries}
+              />
+              <AnimatedCounter
+                value={dict.hero.stats.traceabilityValue}
+                label={dict.hero.stats.traceability}
+              />
+              <AnimatedCounter
+                value={dict.hero.stats.coldChainValue}
+                label={dict.hero.stats.coldChain}
+              />
             </motion.div>
           </div>
 

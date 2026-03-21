@@ -88,6 +88,18 @@
       "emailLabel": "Correo"
     }
   },
+  "trust": {
+    "surtitle": "Confianza y Calidad",
+    "title": "Certificaciones y Estándares",
+    "items": [
+      "ISO 22000",
+      "HACCP",
+      "FDA Compliance",
+      "BRC Food Safety",
+      "Comercio Justo",
+      "Rainforest Alliance"
+    ]
+  },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "description": "Importación, exportación y distribución de café premium y productos alimenticios de calidad superior."

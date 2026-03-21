@@ -8,7 +8,9 @@ interface FooterProps {
 
 export default function Footer({ dict }: FooterProps) {
   return (
-    <footer className="bg-coffee-900/30 border-t border-dark-border">
+    <footer className="bg-coffee-900/30 relative">
+      {/* Gold line separator */}
+      <div className="gold-line w-full" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Top: Logo + description */}
         <div className="flex flex-col items-center text-center mb-10 lg:mb-12">

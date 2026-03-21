@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -8,6 +9,18 @@ interface MissionSectionProps {
 export default function MissionSection({ dict }: MissionSectionProps) {
   return (
     <section id="mission" className="py-20 md:py-28 bg-dark relative overflow-hidden">
+      {/* Background coffee image with low opacity */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <Image
+          src="/images/coffee-beans-dark.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-dark via-transparent to-dark" />
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold-400/3 blur-[150px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -21,7 +34,7 @@ export default function MissionSection({ dict }: MissionSectionProps) {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="bg-dark-card border border-dark-border rounded-3xl p-10 md:p-14 text-center glow-gold">
+          <div className="bg-dark-card/80 backdrop-blur-sm border border-dark-border rounded-3xl p-10 md:p-14 text-center glow-gold">
             <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mb-8" />
             <p className="text-cream/70 text-lg sm:text-xl md:text-2xl leading-relaxed font-light italic">
               {dict.mission.text}

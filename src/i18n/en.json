@@ -88,6 +88,18 @@
       "emailLabel": "Email"
     }
   },
+  "trust": {
+    "surtitle": "Trust & Quality",
+    "title": "Certifications & Standards",
+    "items": [
+      "ISO 22000",
+      "HACCP",
+      "FDA Compliance",
+      "BRC Food Safety",
+      "Fair Trade",
+      "Rainforest Alliance"
+    ]
+  },
   "footer": {
     "rights": "All rights reserved.",
     "description": "Import, export and distribution of premium coffee and superior quality food products."

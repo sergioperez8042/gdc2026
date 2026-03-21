@@ -57,7 +57,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
       </div>
       <button
         type="submit"
-        className="w-full rounded-xl bg-gold-400 hover:bg-gold-500 px-8 py-3.5 text-dark font-bold transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/20 active:scale-[0.98]"
+        className="btn-shimmer w-full rounded-xl bg-coffee-500 hover:bg-coffee-600 px-8 py-3.5 text-cream font-bold transition-all duration-300 hover:shadow-lg hover:shadow-coffee-500/20 active:scale-[0.98]"
       >
         {dict.send}
       </button>
