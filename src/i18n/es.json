@@ -22,8 +22,8 @@
   "about": {
     "surtitle": "Sobre nosotros",
     "title": "Su Socio Estratégico en Comercio Internacional",
-    "p1": "En Global Distribuidora y Comercializadora, C.A., no solo importamos y exportamos — eliminamos las barreras logísticas que frenan su acceso a productos alimenticios de alta calidad.",
-    "p2": "Gestionamos la complejidad del comercio transfronterizo de principio a fin para que usted se concentre en hacer crecer su negocio.",
+    "p1": "En Global Distribuidora y Comercializadora, C.A., somos más que importadores y exportadores; somos los facilitadores esenciales que llevan el sabor del mundo a su mesa y el potencial de su producto a mercados internacionales.",
+    "p2": "Operamos como un socio estratégico integral que gestiona la complejidad del comercio transfronterizo de principio a fin, especializándonos en café de excelencia con trazabilidad completa y en la distribución eficiente de toda clase de alimentos.",
     "cta": "Conózcanos",
     "highlights": {
       "experience": "Experiencia comprobada",
@@ -36,8 +36,8 @@
     "surtitle": "Especialidades",
     "title": "Nuestros Servicios",
     "coffee": {
-      "title": "Café Premium de Especialidad",
-      "description": "Seleccionamos lotes premium y de especialidad con trazabilidad completa desde la finca hasta el tostador. Cada grano cuenta una historia de origen.",
+      "title": "El Compromiso con el Origen: Nuestro Café",
+      "description": "Nos dedicamos a la importación y exportación de granos de café de excelencia, seleccionando lotes premium y de especialidad, asegurando una trazabilidad completa desde la finca hasta el tostador.",
       "points": [
         "Granos de café premium y de especialidad seleccionados",
         "Trazabilidad 100% finca-tostador garantizada",
@@ -46,8 +46,8 @@
       ]
     },
     "food": {
-      "title": "Distribución Integral de Alimentos",
-      "description": "Desde productos frescos con cadena de frío impecable hasta productos secos y envasados. Su carga llega a destino en condiciones óptimas.",
+      "title": "La Eficiencia Global: Alimentos y Distribución",
+      "description": "Desde productos frescos y perecederos que requieren una gestión impecable de la cadena de frío, hasta productos secos y envasados, nuestro sistema logístico está diseñado para la rapidez, la seguridad y el cumplimiento normativo.",
       "points": [
         "Cadena de frío monitoreada 24/7 para perecederos",
         "Productos secos, envasados y frescos",
@@ -58,11 +58,11 @@
   },
   "mission": {
     "title": "Misión",
-    "text": "Conectar mercados globales con alimentos de calidad superior, importando y exportando café de excelencia y ofreciendo soluciones logísticas robustas para la distribución y comercialización ágil de toda clase de productos alimenticios."
+    "text": "Conectar mercados globales con alimentos de calidad superior, importando y exportando café de excelencia y ofreciendo soluciones logísticas robustas para la distribución y comercialización ágil de toda clase de productos alimenticios. Nos dedicamos a operar con un compromiso inquebrantable con la eficiencia, el cumplimiento normativo y la satisfacción de nuestros clientes a lo largo de toda la cadena de suministro."
   },
   "vision": {
     "title": "Visión",
-    "text": "Ser el principal referente global en la cadena de suministro de alimentos, reconocido por nuestra excelencia en café gourmet y nuestra capacidad de distribución ágil e innovadora, definiendo los estándares de confianza, eficiencia y sostenibilidad en el comercio internacional."
+    "text": "Ser el principal referente global en la cadena de suministro de alimentos, reconocido por nuestra excelencia en la importación y exportación de café gourmet y nuestra capacidad de distribución ágil e innovadora para toda clase de productos alimenticios, definiendo los estándares de confianza, eficiencia y sostenibilidad en el comercio internacional."
   },
   "contact": {
     "title": "Hablemos de su Próximo Envío",

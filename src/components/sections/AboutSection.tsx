@@ -22,8 +22,8 @@ export default function AboutSection({ dict }: AboutSectionProps) {
               {/* Main image */}
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
                 <Image
-                  src="/images/coffee-cup.jpg"
-                  alt="Café premium GDC"
+                  src="/images/coffee-beans-import.jpg"
+                  alt="Granos de café de importación GDC"
                   width={600}
                   height={450}
                   className="object-cover w-full h-[350px] lg:h-[420px]"

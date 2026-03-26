@@ -12,14 +12,8 @@ interface HeroSectionProps {
 export default function HeroSection({ dict }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
-      {/* Radial gradient behind title */}
-      <div className="absolute top-[20%] left-[20%] w-[600px] h-[600px] rounded-full bg-gradient-radial from-gold-400/8 to-transparent blur-[100px] pointer-events-none" />
-
-      {/* Decorative blobs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gold-400/15 blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] rounded-full bg-coffee-500/20 blur-[60px] pointer-events-none" />
-      <div className="absolute top-[20%] left-[15%] w-24 h-24 rounded-full bg-gold-400/20 pointer-events-none hidden lg:block" />
-      <div className="absolute bottom-[30%] left-[5%] w-14 h-14 rounded-full bg-gold-400/15 pointer-events-none hidden lg:block" />
+      {/* Subtle radial gradient */}
+      <div className="absolute top-[20%] left-[20%] w-[600px] h-[600px] rounded-full bg-gradient-radial from-gold-400/5 to-transparent blur-[120px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28 lg:py-32">
@@ -100,8 +94,8 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             {/* Main image */}
             <div className="animate-float relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
               <Image
-                src="/images/coffee-cup.jpg"
-                alt="Cafe premium"
+                src="/images/coffee-sacks.jpg"
+                alt="Importación de café en grano"
                 width={500}
                 height={600}
                 className="object-cover w-full h-[500px]"
@@ -112,21 +106,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-cream/15 flex items-start justify-center p-1.5"
-        >
-          <div className="w-1.5 h-2.5 rounded-full bg-cream/30" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

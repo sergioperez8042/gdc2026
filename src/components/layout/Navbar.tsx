@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { usePathname } from "next/navigation";
 
@@ -15,13 +16,19 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const pathname = usePathname();
   const locale = pathname.startsWith("/en") ? "en" : "es";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    // Wait for preloader to fade out (2s)
+    const timer = setTimeout(() => setLoaded(true), 2100);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -33,11 +40,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand text */}
-        <a href="#" className="flex items-center gap-3 group">
-          <span className="font-heading text-lg font-bold text-gold-400 tracking-wide transition-colors duration-300 group-hover:text-gold-300">
-            GDC
-          </span>
+        {/* Logo - hidden during preloader */}
+        <a href="#" aria-label="Inicio">
+          <Image
+            src="/logos/gdc-logo-full.png"
+            alt="GDC"
+            width={70}
+            height={70}
+            className={`transition-all duration-500 hover:scale-105 ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
         </a>
 
         {/* Desktop Nav */}

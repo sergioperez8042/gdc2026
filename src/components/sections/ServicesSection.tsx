@@ -76,8 +76,8 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
             <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
               <div className="relative rounded-2xl overflow-hidden mb-6 h-48">
                 <Image
-                  src="/images/food-distribution.jpg"
-                  alt="Distribución de alimentos"
+                  src="/images/food-fresh.jpg"
+                  alt="Comercio internacional de alimentos"
                   fill
                   className="object-cover service-card-img"
                   sizes="(max-width: 1024px) 100vw, 50vw"

@@ -22,8 +22,8 @@
   "about": {
     "surtitle": "About us",
     "title": "Your Strategic Partner in International Trade",
-    "p1": "At Global Distribuidora y Comercializadora, C.A., we don't just import and export — we eliminate the logistical barriers that slow your access to high-quality food products.",
-    "p2": "We manage the complexity of cross-border trade from start to finish so you can focus on growing your business.",
+    "p1": "At Global Distribuidora y Comercializadora, C.A., we are more than importers and exporters; we are essential facilitators who bring the flavors of the world to your table and unlock your product's potential in international markets.",
+    "p2": "We operate as a comprehensive strategic partner, managing the complexities of cross-border trade from start to finish, specializing in exceptional coffee with full traceability and efficient distribution of all types of food products.",
     "cta": "Learn more",
     "highlights": {
       "experience": "Proven experience",
@@ -36,8 +36,8 @@
     "surtitle": "Specialties",
     "title": "Our Services",
     "coffee": {
-      "title": "Premium Specialty Coffee",
-      "description": "We select premium and specialty lots with full traceability from farm to roaster. Every bean tells an origin story.",
+      "title": "Commitment to Origin: Our Coffee",
+      "description": "We are dedicated to the import and export of exceptional coffee beans, carefully selecting premium and specialty lots and ensuring full traceability from farm to roaster.",
       "points": [
         "Hand-selected premium and specialty coffee beans",
         "100% guaranteed farm-to-roaster traceability",
@@ -46,8 +46,8 @@
       ]
     },
     "food": {
-      "title": "Comprehensive Food Distribution",
-      "description": "From fresh products with impeccable cold chain to dry and packaged goods. Your cargo arrives at destination in optimal conditions.",
+      "title": "Global Efficiency: Food and Distribution",
+      "description": "From fresh and perishable goods that require impeccable cold-chain management to dry and packaged products, our logistics system is designed for speed, safety, and full regulatory compliance.",
       "points": [
         "24/7 monitored cold chain for perishables",
         "Dry, packaged, and fresh products",
@@ -58,11 +58,11 @@
   },
   "mission": {
     "title": "Mission",
-    "text": "To connect global markets with superior-quality food products by importing and exporting exceptional coffee and providing robust logistics solutions for the efficient distribution and commercialization of all types of food products."
+    "text": "To connect global markets with superior-quality food products by importing and exporting exceptional coffee and providing robust logistics solutions for the efficient distribution and commercialization of all types of food products. We are committed to operating with unwavering efficiency, strict regulatory compliance, and complete customer satisfaction throughout the entire supply chain."
   },
   "vision": {
     "title": "Vision",
-    "text": "To become a leading global benchmark in the food supply chain, recognized for our excellence in gourmet coffee and our agile and innovative distribution capabilities, setting the standards for trust, efficiency, and sustainability in international trade."
+    "text": "To become a leading global benchmark in the food supply chain, recognized for our excellence in the import and export of gourmet coffee and our agile and innovative distribution capabilities across all categories of food products, setting the standards for trust, efficiency, and sustainability in international trade."
   },
   "contact": {
     "title": "Let's Talk About Your Next Shipment",
