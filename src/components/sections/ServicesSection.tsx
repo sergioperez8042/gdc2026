@@ -26,19 +26,6 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 relative">
-          {/* Center floating image (desktop) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:block pointer-events-none">
-            <div className="animate-float-slow rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-4 border-dark">
-              <Image
-                src="/images/coffee-farm.jpg"
-                alt="Café de origen"
-                width={200}
-                height={200}
-                className="object-cover w-[180px] h-[180px]"
-              />
-            </div>
-          </div>
-
           {/* Coffee card */}
           <ScrollReveal direction="left" delay={0.1}>
             <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">

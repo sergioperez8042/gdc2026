@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeroSectionProps {
@@ -57,25 +56,27 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               {dict.hero.cta}
             </motion.a>
 
-            {/* Stats with glassmorphism + animated counters */}
+            {/* Trust signals */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex gap-4 mt-12"
+              className="flex items-center gap-6 mt-12 text-cream/40 text-sm tracking-wide"
             >
-              <AnimatedCounter
-                value={dict.hero.stats.countriesValue}
-                label={dict.hero.stats.countries}
-              />
-              <AnimatedCounter
-                value={dict.hero.stats.traceabilityValue}
-                label={dict.hero.stats.traceability}
-              />
-              <AnimatedCounter
-                value={dict.hero.stats.coldChainValue}
-                label={dict.hero.stats.coldChain}
-              />
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                {dict.hero.stats.countriesValue} {dict.hero.stats.countries}
+              </span>
+              <span className="w-px h-4 bg-cream/15" />
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                {dict.hero.stats.traceabilityValue} {dict.hero.stats.traceability}
+              </span>
+              <span className="w-px h-4 bg-cream/15" />
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                {dict.hero.stats.coldChainValue} {dict.hero.stats.coldChain}
+              </span>
             </motion.div>
           </div>
 

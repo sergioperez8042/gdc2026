@@ -86,9 +86,11 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${cormorant.variable} ${lato.variable} antialiased`}>
-      <head>
+      <body className="min-h-screen">
+        {children}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -125,8 +127,7 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
-      <body className="min-h-screen">{children}</body>
+      </body>
     </html>
   );
 }

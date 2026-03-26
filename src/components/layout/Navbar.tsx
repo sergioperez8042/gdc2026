@@ -45,8 +45,8 @@ export default function Navbar() {
           <Image
             src="/logos/gdc-logo-full.png"
             alt="GDC"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
             className={`transition-all duration-500 hover:scale-105 ${
               loaded ? "opacity-100" : "opacity-0"
             }`}

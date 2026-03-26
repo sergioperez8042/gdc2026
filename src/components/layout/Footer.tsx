@@ -13,7 +13,7 @@ export default function Footer({ dict }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Top: Logo + description */}
         <div className="flex flex-col items-center text-center mb-10 lg:mb-12">
-          <Image src="/logos/gdc-logo-full.png" alt="GDC" width={80} height={80} className="mb-3" />
+          <Image src="/logos/gdc-logo-full.png" alt="GDC" width={120} height={120} className="mb-3" />
           <h3 className="text-cream font-heading text-lg font-bold">
             Global Distribuidora y Comercializadora
           </h3>
