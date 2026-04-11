@@ -89,35 +89,9 @@
     }
   },
   "events": {
-    "surtitle": "Próximamente",
-    "title": "Nos verás en el 39º Salón Gourmets",
-    "subtitle": "El mayor encuentro internacional del sector gourmet en España. Donde se cierran los mejores acuerdos de importación, exportación y distribución de café premium y alimentos de calidad.",
-    "dateLabel": "13–16 ABRIL",
-    "year": "2026",
-    "venue": "IFEMA Madrid",
-    "venueDetail": "Pabellones 3, 4, 5, 6 y 7",
-    "schedule": "L–M de 10:00 a 19:00 · J de 10:00 a 17:00",
-    "stats": {
-      "exhibitors": "Expositores",
-      "exhibitorsValue": "+2.000",
-      "visitors": "Visitantes profesionales",
-      "visitorsValue": "+110.000",
-      "products": "Productos premium",
-      "productsValue": "+50.000"
-    },
-    "highlights": {
-      "intro": "Un evento estratégico para nuestro sector:",
-      "items": [
-        "Hosted Buyers Program con ICEX y MAPA — conexión directa con compradores internacionales",
-        "Café de especialidad, alimentos gourmet y productos de calidad",
-        "Importadores, exportadores, distribuidores y retail especializado",
-        "65.000 m² de exhibición y networking de alto nivel"
-      ]
-    },
-    "ctaPrimary": "Sitio oficial del evento",
-    "ctaSecondary": "Cómo llegar a IFEMA",
-    "officialUrl": "https://www.gourmets.net/salon-gourmets",
-    "venueUrl": "https://www.ifema.es/salon-gourmets"
+    "surtitle": "Trayectoria",
+    "title": "Eventos en los que hemos participado",
+    "subtitle": "Presencia constante en las ferias internacionales más relevantes del sector gourmet, café de especialidad y distribución alimentaria."
   },
   "trust": {
     "surtitle": "Nuestros Aliados",

@@ -31,7 +31,7 @@ export default async function Home({
       <SectionDivider />
       <ServicesSection dict={dict} />
       <SectionDivider />
-      <EventsSection dict={dict} />
+      <EventsSection dict={dict} locale={locale as Locale} />
       <SectionDivider />
       <TrustSection dict={dict} />
       <SectionDivider />

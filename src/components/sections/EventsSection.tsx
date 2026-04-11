@@ -1,12 +1,73 @@
-import { Calendar, MapPin, Clock, ArrowUpRight, CircleCheck } from "lucide-react";
+import Image from "next/image";
+import { MapPin, ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import type { Dictionary } from "@/i18n/dictionaries";
+import type { Dictionary, Locale } from "@/i18n/dictionaries";
+import { historicalEvents, type HistoricalEvent } from "@/data/historicalEvents";
 
 interface EventsSectionProps {
   dict: Dictionary;
+  locale: Locale;
 }
 
-export default function EventsSection({ dict }: EventsSectionProps) {
+// Card content extracted so we can render it inside either <a> or <article>
+// without duplicating JSX. Kept as a pure function component (module-level,
+// not defined inside EventsSection — avoids `rerender-no-inline-components`).
+function EventCardContent({
+  event,
+  locale,
+}: {
+  event: HistoricalEvent;
+  locale: Locale;
+}) {
+  return (
+    <>
+      {/* Image */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-dark-border">
+        <Image
+          src={event.image}
+          alt={event.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        {/* Bottom gradient for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
+
+        {/* Edition + year badge */}
+        <div className="absolute top-4 left-4 bg-gold-400 text-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+          {event.edition[locale]} · {event.year}
+        </div>
+
+        {/* External link arrow (only shown when card has url) */}
+        {event.url && (
+          <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-dark/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ArrowUpRight className="w-4 h-4 text-gold-300" strokeWidth={2} />
+          </div>
+        )}
+      </div>
+
+      {/* Text content */}
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="font-heading text-xl font-bold text-cream mb-2 leading-tight group-hover:text-gold-300 transition-colors">
+          {event.name}
+        </h3>
+        <div className="flex items-center gap-1.5 text-cream/55 text-sm mb-4">
+          <MapPin className="w-3.5 h-3.5 text-gold-400 shrink-0" strokeWidth={2} />
+          <span>{event.location}</span>
+        </div>
+        <p className="text-cream/55 text-sm leading-relaxed">{event.description[locale]}</p>
+      </div>
+    </>
+  );
+}
+
+const CARD_CLASSES =
+  "group bg-dark-card border border-dark-border rounded-3xl overflow-hidden hover:border-gold-400/40 transition-all duration-300 h-full flex flex-col";
+
+export default function EventsSection({ dict, locale }: EventsSectionProps) {
+  // Render nothing when there is no data yet — satisfies "no mostrar nada".
+  if (historicalEvents.length === 0) return null;
+
   const ev = dict.events;
 
   return (
@@ -17,109 +78,38 @@ export default function EventsSection({ dict }: EventsSectionProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <p className="text-gold-400 text-sm font-bold uppercase tracking-[0.2em] mb-3">
               {ev.surtitle}
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-cream">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4">
               {ev.title}
             </h2>
+            <p className="text-cream/50 max-w-2xl mx-auto leading-relaxed">{ev.subtitle}</p>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
-          <div className="bg-dark-card border border-dark-border rounded-3xl overflow-hidden shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr]">
-              {/* Date pillar */}
-              <div className="bg-gradient-to-br from-gold-400/15 via-gold-400/5 to-transparent border-b lg:border-b-0 lg:border-r border-dark-border p-8 lg:p-10 flex flex-col justify-center items-center text-center">
-                <Calendar className="w-8 h-8 text-gold-400 mb-4" strokeWidth={1.5} />
-                <p className="font-heading text-3xl md:text-4xl font-bold text-cream leading-tight">
-                  {ev.dateLabel}
-                </p>
-                <p className="font-heading text-2xl text-gold-400 mt-1">{ev.year}</p>
-                <div className="mt-6 pt-6 border-t border-dark-border w-full space-y-3 text-left">
-                  <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <div>
-                      <p className="text-cream text-sm font-semibold">{ev.venue}</p>
-                      <p className="text-cream/50 text-xs">{ev.venueDetail}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Clock className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <p className="text-cream/50 text-xs leading-snug">{ev.schedule}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-8 lg:p-10">
-                <p className="text-cream/60 leading-relaxed mb-6">{ev.subtitle}</p>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  <div className="text-center md:text-left">
-                    <p className="font-heading text-2xl md:text-3xl font-bold text-gold-300">
-                      {ev.stats.exhibitorsValue}
-                    </p>
-                    <p className="text-cream/45 text-xs uppercase tracking-wider mt-1">
-                      {ev.stats.exhibitors}
-                    </p>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <p className="font-heading text-2xl md:text-3xl font-bold text-gold-300">
-                      {ev.stats.visitorsValue}
-                    </p>
-                    <p className="text-cream/45 text-xs uppercase tracking-wider mt-1">
-                      {ev.stats.visitors}
-                    </p>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <p className="font-heading text-2xl md:text-3xl font-bold text-gold-300">
-                      {ev.stats.productsValue}
-                    </p>
-                    <p className="text-cream/45 text-xs uppercase tracking-wider mt-1">
-                      {ev.stats.products}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Highlights */}
-                <p className="text-cream/70 text-sm font-semibold mb-3">{ev.highlights.intro}</p>
-                <ul className="space-y-2.5 mb-8">
-                  {ev.highlights.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CircleCheck className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-cream/55 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={ev.officialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-gold-400 hover:bg-gold-500 text-dark font-semibold px-6 py-3 rounded-full transition-colors"
-                  >
-                    {ev.ctaPrimary}
-                    <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
-                  </a>
-                  <a
-                    href={ev.venueUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border border-dark-border hover:border-gold-400/50 text-cream/80 hover:text-cream font-semibold px-6 py-3 rounded-full transition-colors"
-                  >
-                    {ev.ctaSecondary}
-                    <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
+        {/* Grid: 1 col mobile, 2 cols tablet, 3 cols desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {historicalEvents.map((event, i) => (
+            <ScrollReveal key={`${event.name}-${event.year}-${i}`} delay={i * 0.08}>
+              {event.url ? (
+                <a
+                  href={event.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={CARD_CLASSES}
+                >
+                  <EventCardContent event={event} locale={locale} />
+                </a>
+              ) : (
+                <article className={CARD_CLASSES}>
+                  <EventCardContent event={event} locale={locale} />
+                </article>
+              )}
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );
