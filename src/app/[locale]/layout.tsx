@@ -8,6 +8,12 @@ export async function generateStaticParams() {
   return [{ locale: "es" }, { locale: "en" }];
 }
 
+// Only `es` and `en` are valid locales. Any other single-segment root path
+// (e.g. `/favicon.ico`, `/robots.txt`) must 404 so the browser falls back to
+// the `<link rel="icon">` in the rendered HTML instead of receiving the
+// page HTML as an (invalid) favicon response.
+export const dynamicParams = false;
+
 export default async function LocaleLayout({
   children,
   params,
