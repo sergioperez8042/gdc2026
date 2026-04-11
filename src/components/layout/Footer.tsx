@@ -30,7 +30,7 @@ export default function Footer({ dict }: FooterProps) {
             <h4 className="text-cream font-semibold mb-3 text-xs uppercase tracking-wider">
               Menu
             </h4>
-            <ul className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 sm:flex-col sm:space-y-2 sm:gap-0">
+            <ul className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1 sm:flex-col sm:space-y-1 sm:gap-0">
               {(["about", "services", "mission", "vision", "contact"] as const).map((key) => (
                 <li key={key}>
                   <a href={`#${key}`} className="text-cream/35 hover:text-gold-400 text-sm transition-colors duration-300">
