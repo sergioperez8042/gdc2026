@@ -1,11 +1,21 @@
-import Image from "next/image";
 import { CircleCheck } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import CardCarousel from "@/components/ui/CardCarousel";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface ServicesSectionProps {
   dict: Dictionary;
 }
+
+const coffeeImages = Array.from({ length: 9 }, (_, i) => ({
+  src: `/images/coffee-gallery/coffee-${String(i).padStart(2, "0")}.jpg`,
+  alt: "Granos de café premium",
+}));
+
+const foodImages = Array.from({ length: 12 }, (_, i) => ({
+  src: `/images/gallery/food-${String(i + 1).padStart(2, "0")}.jpg`,
+  alt: "Producto alimenticio internacional",
+}));
 
 export default function ServicesSection({ dict }: ServicesSectionProps) {
   return (
@@ -29,18 +39,11 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
           {/* Coffee card */}
           <ScrollReveal direction="left" delay={0.1}>
             <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
-              <div className="relative rounded-2xl overflow-hidden mb-6 h-48">
-                <Image
-                  src="/images/coffee-beans.jpg"
-                  alt="Granos de café premium"
-                  fill
-                  className="object-cover service-card-img"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute top-3 right-3 bg-gold-400 text-dark text-xs font-bold px-3 py-1 rounded-full">
-                  Premium
-                </div>
-              </div>
+              <CardCarousel
+                images={coffeeImages}
+                interval={4500}
+                badge={{ label: "Premium", className: "bg-gold-400 text-dark" }}
+              />
               <h3 className="font-heading text-2xl font-bold mb-3 text-gold-300">
                 {dict.services.coffee.title}
               </h3>
@@ -61,18 +64,11 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
           {/* Food card */}
           <ScrollReveal direction="right" delay={0.2}>
             <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 h-full">
-              <div className="relative rounded-2xl overflow-hidden mb-6 h-48">
-                <Image
-                  src="/images/food-fresh.jpg"
-                  alt="Comercio internacional de alimentos"
-                  fill
-                  className="object-cover service-card-img"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute top-3 right-3 bg-fresh-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  24/7
-                </div>
-              </div>
+              <CardCarousel
+                images={foodImages}
+                interval={4000}
+                badge={{ label: "24/7", className: "bg-fresh-500 text-white" }}
+              />
               <h3 className="font-heading text-2xl font-bold mb-3 text-fresh-300">
                 {dict.services.food.title}
               </h3>

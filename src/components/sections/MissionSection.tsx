@@ -12,7 +12,7 @@ export default function MissionSection({ dict }: MissionSectionProps) {
       {/* Background coffee image with low opacity */}
       <div className="absolute inset-0 opacity-[0.04]">
         <Image
-          src="/images/coffee-beans-dark.jpg"
+          src="/images/dark-coffee-bg.jpg"
           alt=""
           fill
           className="object-cover"

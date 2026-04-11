@@ -2,7 +2,6 @@ import { getDictionary, type Locale } from "@/i18n/dictionaries";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import GallerySection from "@/components/sections/GallerySection";
 import TrustSection from "@/components/sections/TrustSection";
 import MissionSection from "@/components/sections/MissionSection";
 import VisionSection from "@/components/sections/VisionSection";
@@ -30,8 +29,6 @@ export default async function Home({
       <AboutSection dict={dict} />
       <SectionDivider />
       <ServicesSection dict={dict} />
-      <SectionDivider />
-      <GallerySection dict={dict} />
       <SectionDivider />
       <TrustSection dict={dict} />
       <SectionDivider />
