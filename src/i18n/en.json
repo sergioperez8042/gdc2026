@@ -88,6 +88,11 @@
       "emailLabel": "Email"
     }
   },
+  "gallery": {
+    "surtitle": "Catalog",
+    "title": "Products We Distribute",
+    "subtitle": "A selection of the premium foods that form part of our international catalog."
+  },
   "trust": {
     "surtitle": "Our Partners",
     "title": "Partner Certifications",
