@@ -4,21 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { usePathname } from "next/navigation";
-
-const navLinks = [
-  { id: "about", es: "Quiénes Somos", en: "About" },
-  { id: "services", es: "Servicios", en: "Services" },
-  { id: "mission", es: "Misión", en: "Mission" },
-  { id: "vision", es: "Visión", en: "Vision" },
-  { id: "contact", es: "Contacto", en: "Contact" },
-];
+import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const pathname = usePathname();
-  const locale = pathname.startsWith("/en") ? "en" : "es";
+  const locale = pathname.startsWith("/en/") || pathname === "/en" ? "en" : "es";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -55,7 +48,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
@@ -104,7 +97,7 @@ export default function Navbar() {
         }`}
       >
         <div className="bg-dark/95 backdrop-blur-md border-b border-dark-border px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}

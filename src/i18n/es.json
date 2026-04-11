@@ -89,15 +89,16 @@
     }
   },
   "trust": {
-    "surtitle": "Confianza y Calidad",
-    "title": "Certificaciones y Estándares",
+    "surtitle": "Nuestros Aliados",
+    "title": "Certificaciones de Nuestros Socios",
+    "subtitle": "Nuestros aliados cuentan con certificaciones reconocidas internacionalmente, lo que permite el acceso a mercados islámicos y judíos en todo el mundo.",
     "items": [
-      "ISO 22000",
-      "HACCP",
-      "FDA Compliance",
-      "BRC Food Safety",
-      "Comercio Justo",
-      "Rainforest Alliance"
+      "Certificación Halal",
+      "Certificación Kósher",
+      "Apto para mercados islámicos",
+      "Apto para mercados judíos",
+      "Comercio internacional seguro",
+      "Estándares alimentarios globales"
     ]
   },
   "footer": {

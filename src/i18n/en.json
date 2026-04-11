@@ -89,15 +89,16 @@
     }
   },
   "trust": {
-    "surtitle": "Trust & Quality",
-    "title": "Certifications & Standards",
+    "surtitle": "Our Partners",
+    "title": "Partner Certifications",
+    "subtitle": "Our partners hold internationally recognized certifications, enabling access to Islamic and Jewish markets worldwide.",
     "items": [
-      "ISO 22000",
-      "HACCP",
-      "FDA Compliance",
-      "BRC Food Safety",
-      "Fair Trade",
-      "Rainforest Alliance"
+      "Halal Certified",
+      "Kosher Certified",
+      "Suitable for Islamic Markets",
+      "Suitable for Jewish Markets",
+      "International Trade Ready",
+      "Global Food Standards"
     ]
   },
   "footer": {

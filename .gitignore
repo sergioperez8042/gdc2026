@@ -12,7 +12,7 @@
 
 # testing
 /coverage
-
+video/
 # next.js
 /.next/
 /out/

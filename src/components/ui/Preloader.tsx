@@ -9,8 +9,10 @@ export default function Preloader() {
   useEffect(() => {
     if (sessionStorage.getItem("preloaded")) return;
     setVisible(true);
-    sessionStorage.setItem("preloaded", "1");
-    const timer = setTimeout(() => setVisible(false), 2000);
+    const timer = setTimeout(() => {
+      setVisible(false);
+      sessionStorage.setItem("preloaded", "1"); // marcar solo cuando termina
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 

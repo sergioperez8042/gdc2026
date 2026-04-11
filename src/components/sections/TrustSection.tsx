@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { ShieldCheck } from "lucide-react";
+import { Award } from "lucide-react";
 
 interface TrustSectionProps {
   dict: Dictionary;
@@ -18,9 +18,12 @@ export default function TrustSection({ dict }: TrustSectionProps) {
             <p className="text-gold-400 text-sm font-bold uppercase tracking-[0.2em] mb-3">
               {dict.trust.surtitle}
             </p>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-cream">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-cream mb-4">
               {dict.trust.title}
             </h2>
+            <p className="text-cream/40 text-sm max-w-xl mx-auto leading-relaxed">
+              {dict.trust.subtitle}
+            </p>
           </div>
         </ScrollReveal>
 
@@ -37,7 +40,7 @@ export default function TrustSection({ dict }: TrustSectionProps) {
                   key={`${item}-${i}`}
                   className="glass rounded-2xl px-8 py-5 flex items-center gap-3 shrink-0"
                 >
-                  <ShieldCheck className="w-5 h-5 text-gold-400 shrink-0" strokeWidth={1.5} />
+                  <Award className="w-5 h-5 text-gold-400 shrink-0" strokeWidth={1.5} />
                   <span className="text-cream/60 text-sm font-medium whitespace-nowrap">
                     {item}
                   </span>

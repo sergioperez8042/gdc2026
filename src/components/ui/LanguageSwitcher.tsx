@@ -6,7 +6,7 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLocale = pathname.startsWith("/en") ? "en" : "es";
+  const currentLocale = pathname.startsWith("/en/") || pathname === "/en" ? "en" : "es";
 
   const switchLocale = (locale: string) => {
     const newPath = pathname.replace(/^\/(es|en)/, `/${locale}`);

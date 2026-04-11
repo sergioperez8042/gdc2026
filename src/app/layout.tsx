@@ -85,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${cormorant.variable} ${lato.variable} antialiased`}>
+    <html lang="es" className={`${cormorant.variable} ${lato.variable} antialiased`}>
       <body className="min-h-screen">
         {children}
         <script
