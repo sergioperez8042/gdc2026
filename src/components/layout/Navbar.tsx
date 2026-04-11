@@ -26,7 +26,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      style={{ top: "var(--ab-h, 0px)" }}
+      className={`fixed left-0 right-0 z-50 transition-[top,padding,background] duration-500 ${
         scrolled
           ? "bg-dark/90 backdrop-blur-md shadow-lg shadow-black/20 border-b border-dark-border py-3"
           : "bg-transparent py-5"

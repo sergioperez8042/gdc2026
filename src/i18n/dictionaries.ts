@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 export type Locale = "es" | "en";
 
 const locales: Locale[] = ["es", "en"];
@@ -8,9 +10,12 @@ const dictionaries = {
   en: () => import("./en.json").then((m) => m.default),
 };
 
-export const getDictionary = async (locale: string) => {
+// React.cache dedupes calls within the same request — both layout.tsx and
+// page.tsx call getDictionary(locale) for the same locale, so without this
+// the JSON would resolve twice per request.
+export const getDictionary = cache(async (locale: string) => {
   const safe = locales.includes(locale as Locale) ? (locale as Locale) : defaultLocale;
   return dictionaries[safe]();
-};
+});
 
 export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;

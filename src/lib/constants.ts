@@ -7,6 +7,8 @@ export const COMPANY = {
     ve: "+58 416 832 53 85",
     es: "+34 686 72 77 15",
   },
+  // Digits-only format required by wa.me URL scheme (no +, no spaces).
+  whatsapp: "34686727715",
   address: {
     street: "Av. el cortijo, casa #55",
     area: "Urbanización Los Rosales",

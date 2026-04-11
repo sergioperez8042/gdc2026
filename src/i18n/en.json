@@ -79,8 +79,18 @@
         "other": "Other"
       },
       "message": "Tell us about your project or need...",
-      "send": "Send request",
-      "success": "Request sent! We'll respond within 24 hours."
+      "send": "Send via WhatsApp",
+      "sending": "Opening WhatsApp…",
+      "success": "Opening WhatsApp",
+      "successDescription": "Review the conversation and press send to complete the request.",
+      "error": "Please check the highlighted fields",
+      "errorDescription": "Some fields are missing or invalid.",
+      "errors": {
+        "REQUIRED": "This field is required",
+        "INVALID_EMAIL": "Invalid email address",
+        "TOO_SHORT": "Please write a bit more (10 characters minimum)",
+        "TOO_LONG": "Text is too long"
+      }
     },
     "info": {
       "address": "Address",
@@ -92,6 +102,13 @@
     "surtitle": "Track record",
     "title": "Events we have attended",
     "subtitle": "Continuous presence at the most relevant international trade shows in the gourmet, specialty coffee and food distribution sector."
+  },
+  "announcement": {
+    "banner": "See us at the 39th Salón Gourmets · IFEMA Madrid · April 13–16",
+    "bannerShort": "Salón Gourmets · IFEMA · Apr 13–16",
+    "bannerCta": "More info",
+    "url": "https://www.gourmets.net/salon-gourmets",
+    "endDate": "2026-04-17T23:59:59"
   },
   "trust": {
     "surtitle": "Our Partners",

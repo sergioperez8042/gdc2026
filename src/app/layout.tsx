@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Lato } from "next/font/google";
 import "./globals.css";
+import { ToastProvider } from "@/contexts/ToastContext";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-playfair",
@@ -87,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${cormorant.variable} ${lato.variable} antialiased`}>
       <body className="min-h-screen">
-        {children}
+        <ToastProvider>{children}</ToastProvider>
         <script
           type="application/ld+json"
           suppressHydrationWarning

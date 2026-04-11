@@ -60,6 +60,10 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Top announcement bar height — written from AnnouncementBar.tsx on mount,
+     read by Navbar to offset its `top`. Defaults to 0 when no bar is visible. */
+  --ab-h: 0px;
 }
 
 body {
@@ -284,3 +288,4 @@ p {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-gold-400), transparent);
 }
+

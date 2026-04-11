@@ -79,8 +79,18 @@
         "other": "Otro"
       },
       "message": "Cuéntenos sobre su proyecto o necesidad...",
-      "send": "Enviar solicitud",
-      "success": "¡Solicitud enviada! Le responderemos en menos de 24 horas."
+      "send": "Enviar por WhatsApp",
+      "sending": "Abriendo WhatsApp…",
+      "success": "Abriendo WhatsApp",
+      "successDescription": "Revisa la conversación y pulsa enviar para completar el envío.",
+      "error": "Revisa los campos marcados",
+      "errorDescription": "Algunos datos faltan o no son válidos.",
+      "errors": {
+        "REQUIRED": "Este campo es obligatorio",
+        "INVALID_EMAIL": "Correo electrónico inválido",
+        "TOO_SHORT": "Por favor escribe un poco más (mínimo 10 caracteres)",
+        "TOO_LONG": "Texto demasiado largo"
+      }
     },
     "info": {
       "address": "Dirección",
@@ -92,6 +102,13 @@
     "surtitle": "Trayectoria",
     "title": "Eventos en los que hemos participado",
     "subtitle": "Presencia constante en las ferias internacionales más relevantes del sector gourmet, café de especialidad y distribución alimentaria."
+  },
+  "announcement": {
+    "banner": "Visítanos en el 39º Salón Gourmets · IFEMA Madrid · 13–16 abril",
+    "bannerShort": "Salón Gourmets · IFEMA · 13–16 abr",
+    "bannerCta": "Más info",
+    "url": "https://www.gourmets.net/salon-gourmets",
+    "endDate": "2026-04-17T23:59:59"
   },
   "trust": {
     "surtitle": "Nuestros Aliados",
