@@ -88,6 +88,37 @@
       "emailLabel": "Email"
     }
   },
+  "events": {
+    "surtitle": "Coming up",
+    "title": "See us at the 39th Salón Gourmets",
+    "subtitle": "Spain's largest international gourmet trade show. Where the best deals in premium coffee and quality food import, export and distribution are closed.",
+    "dateLabel": "APRIL 13–16",
+    "year": "2026",
+    "venue": "IFEMA Madrid",
+    "venueDetail": "Halls 3, 4, 5, 6 & 7",
+    "schedule": "Mon–Wed 10:00–19:00 · Thu 10:00–17:00",
+    "stats": {
+      "exhibitors": "Exhibitors",
+      "exhibitorsValue": "+2,000",
+      "visitors": "Trade visitors",
+      "visitorsValue": "+110,000",
+      "products": "Premium products",
+      "productsValue": "+50,000"
+    },
+    "highlights": {
+      "intro": "A strategic event for our industry:",
+      "items": [
+        "Hosted Buyers Program with ICEX and MAPA — direct access to international buyers",
+        "Specialty coffee, gourmet food and quality products",
+        "Importers, exporters, distributors and specialty retail",
+        "65,000 m² of exhibition space and high-level networking"
+      ]
+    },
+    "ctaPrimary": "Official event website",
+    "ctaSecondary": "Directions to IFEMA",
+    "officialUrl": "https://www.gourmets.net/salon-gourmets",
+    "venueUrl": "https://www.ifema.es/salon-gourmets"
+  },
   "trust": {
     "surtitle": "Our Partners",
     "title": "Partner Certifications",
