@@ -12,7 +12,7 @@ const coffeeImages = Array.from({ length: 9 }, (_, i) => ({
   alt: "Granos de café premium",
 }));
 
-const foodImages = Array.from({ length: 6 }, (_, i) => ({
+const foodImages = Array.from({ length: 5 }, (_, i) => ({
   src: `/images/gallery/food-${String(i + 1).padStart(2, "0")}.jpg`,
   alt: "Producto alimenticio internacional",
 }));
