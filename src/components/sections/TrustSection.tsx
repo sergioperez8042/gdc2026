@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Award, Building2, MapPin } from "lucide-react";
@@ -9,8 +10,10 @@ interface TrustSectionProps {
 export default function TrustSection({ dict }: TrustSectionProps) {
   const items = dict.trust.items;
   const partners = dict.trust.partners;
+  const fhaItems = dict.trust.fhaItems;
   const duplicatedItems = [...items, ...items];
   const duplicatedPartners = [...partners, ...partners];
+  const duplicatedFha = [...fhaItems, ...fhaItems];
 
   return (
     <section className="py-16 md:py-24 bg-dark relative overflow-hidden">
@@ -62,8 +65,40 @@ export default function TrustSection({ dict }: TrustSectionProps) {
           </div>
         </ScrollReveal>
 
-        {/* Certifications row */}
+        {/* FHA 2026 sectors row */}
         <ScrollReveal delay={0.2}>
+          <p className="text-gold-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-4 text-center">
+            {dict.trust.fhaLabel}
+          </p>
+          <div className="relative mb-10">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none" />
+            <div className="overflow-hidden">
+              <div className="animate-scroll-infinite flex gap-6 w-max" style={{ animationDirection: "reverse" }}>
+                {duplicatedFha.map((item, i) => (
+                  <div
+                    key={`${item.label}-${i}`}
+                    className="glass rounded-2xl px-5 py-3 flex items-center gap-3 shrink-0 border border-gold-400/10"
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={40}
+                      height={40}
+                      className="shrink-0"
+                    />
+                    <span className="text-cream text-sm font-semibold whitespace-nowrap">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Certifications row */}
+        <ScrollReveal delay={0.3}>
           <p className="text-gold-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-4 text-center">
             {dict.trust.certsLabel}
           </p>

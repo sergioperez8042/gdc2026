@@ -1,4 +1,3 @@
-import { Clock, ShieldCheck } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/ui/ContactForm";
@@ -16,19 +15,9 @@ export default function ContactSection({ dict }: ContactSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
           <SectionHeading title={dict.contact.title} />
-          <p className="text-center text-cream/40 -mt-8 mb-4 max-w-xl mx-auto text-lg">
+          <p className="text-center text-cream/40 -mt-8 mb-14 max-w-xl mx-auto text-lg">
             {dict.contact.subtitle}
           </p>
-          <div className="flex items-center justify-center gap-6 mb-14 text-sm text-cream/25">
-            <span className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4" strokeWidth={1.5} />
-              Respuesta &lt; 24h
-            </span>
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4" strokeWidth={1.5} />
-              Sin compromiso
-            </span>
-          </div>
         </ScrollReveal>
 
         <div className="max-w-2xl mx-auto">

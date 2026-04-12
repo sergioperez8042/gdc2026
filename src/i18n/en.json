@@ -66,7 +66,7 @@
   },
   "contact": {
     "title": "Let's Talk About Your Next Shipment",
-    "subtitle": "Receive a personalized quote in less than 24 hours",
+    "subtitle": "Receive a personalized quote",
     "form": {
       "name": "Full name",
       "email": "Email address",
@@ -122,6 +122,16 @@
       { "name": "APROARCA C.A.", "origin": "Venezuela" },
       { "name": "Turathi", "origin": "Colombia" },
       { "name": "American Coffee Company", "origin": "Colombia" }
+    ],
+    "fhaLabel": "FHA 2026 Sectors",
+    "fhaItems": [
+      { "icon": "/logos/fha/coffee-tea-bar.png", "label": "Coffee, Tea & Bar" },
+      { "icon": "/logos/fha/fresh-produce.png", "label": "Fresh Produce" },
+      { "icon": "/logos/fha/seafood.png", "label": "Seafood" },
+      { "icon": "/logos/fha/meat-poultry.png", "label": "Meat & Poultry" },
+      { "icon": "/logos/fha/intl-food.png", "label": "International Food" },
+      { "icon": "/logos/fha/halal.png", "label": "Halal" },
+      { "icon": "/logos/fha/fine-food.png", "label": "Fine Food" }
     ],
     "certsLabel": "Certifications",
     "items": [
