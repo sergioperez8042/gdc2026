@@ -33,7 +33,7 @@ export default function CardCarousel({
   return (
     <div
       ref={containerRef}
-      className="relative rounded-2xl overflow-hidden mb-6 h-48 bg-dark-border"
+      className="relative rounded-2xl overflow-hidden mb-6 aspect-[16/10] bg-dark-border"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
