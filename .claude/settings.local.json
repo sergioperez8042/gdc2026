@@ -118,7 +118,23 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{time_total}s\\\\n\" http://localhost:3000/en)",
       "WebFetch(domain:docs.web3forms.com)",
       "Bash(/opt/homebrew/bin/node --version)",
-      "Bash(/opt/homebrew/bin/node node_modules/.bin/next build)"
+      "Bash(/opt/homebrew/bin/node node_modules/.bin/next build)",
+      "Bash(curl -sI http://localhost:3000/icon.png)",
+      "Bash(curl -sI http://localhost:3000/favicon.ico)",
+      "Bash(curl -sI http://localhost:3000/es)",
+      "Bash(curl -sI http://localhost:3000/fr)",
+      "Read(//private/tmp/mango_candidates/**)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o m05_haden.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mango_Haden_Asit_fs8.jpg/1920px-Mango_Haden_Asit_fs8.jpg\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o m06_senegal.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Mangoes_from_Senegal_01.jpg/1920px-Mangoes_from_Senegal_01.jpg\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o m07_senegal2.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Mangoes_from_Senegal_02.jpg/1920px-Mangoes_from_Senegal_02.jpg\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o m08_processing.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AOM_Mango_Processing_Plant_-_Mali_Value_Chains_%2817069833380%29.jpg/1920px-AOM_Mango_Processing_Plant_-_Mali_Value_Chains_%2817069833380%29.jpg\")",
+      "Bash(rm food-04.jpg food-05.jpg food-06.jpg)",
+      "Bash(mv food-07.jpg food-04.jpg)",
+      "Bash(mv food-08.jpg food-05.jpg)",
+      "Bash(mv food-09.jpg food-06.jpg)",
+      "WebFetch(domain:codisumroraima.com)",
+      "WebFetch(domain:www.kofy.io)",
+      "WebFetch(domain:americancoffeecompany.co)"
     ]
   }
 }

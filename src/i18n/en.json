@@ -112,8 +112,18 @@
   },
   "trust": {
     "surtitle": "Our Partners",
-    "title": "Partner Certifications",
-    "subtitle": "Our partners hold internationally recognized certifications, enabling access to Islamic and Jewish markets worldwide.",
+    "title": "Brands & Certifications",
+    "subtitle": "We work with recognized brands from Venezuela and Colombia, backed by international certifications that open doors to global markets.",
+    "partnersLabel": "Partner brands",
+    "partners": [
+      { "name": "Codisum Roraima", "origin": "Venezuela" },
+      { "name": "Café Los Abuelos", "origin": "Venezuela" },
+      { "name": "Café Kofy.io", "origin": "Venezuela" },
+      { "name": "APROARCA C.A.", "origin": "Venezuela" },
+      { "name": "Turathi", "origin": "Colombia" },
+      { "name": "American Coffee Company", "origin": "Colombia" }
+    ],
+    "certsLabel": "Certifications",
     "items": [
       "Halal Certified",
       "Kosher Certified",
