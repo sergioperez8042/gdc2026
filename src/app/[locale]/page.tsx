@@ -4,6 +4,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import EventsSection from "@/components/sections/EventsSection";
 import TrustSection from "@/components/sections/TrustSection";
+import PodcastSection from "@/components/sections/PodcastSection";
 import MissionSection from "@/components/sections/MissionSection";
 import VisionSection from "@/components/sections/VisionSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -34,6 +35,8 @@ export default async function Home({
       <EventsSection dict={dict} locale={locale as Locale} />
       <SectionDivider />
       <TrustSection dict={dict} />
+      <SectionDivider />
+      <PodcastSection dict={dict} />
       <SectionDivider />
       <MissionSection dict={dict} />
       <SectionDivider />

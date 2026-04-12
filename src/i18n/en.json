@@ -116,12 +116,12 @@
     "subtitle": "We work with recognized brands from Venezuela and Colombia, backed by international certifications that open doors to global markets.",
     "partnersLabel": "Partner brands",
     "partners": [
-      { "name": "Codisum Roraima", "origin": "Venezuela" },
-      { "name": "Café Los Abuelos", "origin": "Venezuela" },
-      { "name": "Café Kofy.io", "origin": "Venezuela" },
-      { "name": "APROARCA C.A.", "origin": "Venezuela" },
-      { "name": "Turathi", "origin": "Colombia" },
-      { "name": "American Coffee Company", "origin": "Colombia" }
+      { "name": "Codisum Roraima", "origin": "Venezuela", "logo": "/logos/partners/codisum.jpg" },
+      { "name": "Café Los Abuelos", "origin": "Venezuela", "logo": "/logos/partners/los-abuelos.jpg" },
+      { "name": "Café Kofy.io", "origin": "Venezuela", "logo": "/logos/partners/kofy.png" },
+      { "name": "APROARCA C.A.", "origin": "Venezuela", "logo": "/logos/partners/aproarca.png" },
+      { "name": "Turathi", "origin": "Colombia", "logo": "/logos/partners/turathi.png" },
+      { "name": "American Coffee Company", "origin": "Colombia", "logo": "" }
     ],
     "fhaLabel": "FHA 2026 Sectors",
     "fhaItems": [
@@ -135,13 +135,16 @@
     ],
     "certsLabel": "Certifications",
     "items": [
-      "Halal Certified",
-      "Kosher Certified",
-      "Suitable for Islamic Markets",
-      "Suitable for Jewish Markets",
-      "International Trade Ready",
-      "Global Food Standards"
+      { "icon": "/logos/certs/halal.svg", "label": "Halal Certified" },
+      { "icon": "/logos/certs/kosher.svg", "label": "Kosher Certified" }
     ]
+  },
+  "podcast": {
+    "surtitle": "La Hora del Café",
+    "title": "The specialty coffee podcast",
+    "subtitle": "Conversations about origin, roasting, coffee culture, and international trade. Follow us and never miss an episode.",
+    "ctaYoutube": "Subscribe on YouTube",
+    "ctaInstagram": "Follow on Instagram"
   },
   "footer": {
     "rights": "All rights reserved.",

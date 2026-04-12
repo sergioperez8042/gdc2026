@@ -20,6 +20,12 @@ export const COMPANY = {
     "Av. el cortijo, casa #55, Urbanización Los Rosales, Distrito Capital, Caracas-Venezuela",
 } as const;
 
+export const SOCIAL = {
+  instagram: "https://www.instagram.com/lahoradelcafe.tv",
+  youtube: "https://youtube.com/@lahoradelcafecondt",
+  youtubeLatestVideoId: "PLACEHOLDER", // update with latest video ID
+} as const;
+
 export const NAV_LINKS = [
   { id: "about", es: "Quiénes Somos", en: "About" },
   { id: "services", es: "Servicios", en: "Services" },

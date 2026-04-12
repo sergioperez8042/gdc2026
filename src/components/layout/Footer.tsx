@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Instagram, Youtube } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -21,6 +22,26 @@ export default function Footer({ dict }: FooterProps) {
           <p className="text-cream/35 text-sm leading-relaxed mt-3 max-w-md">
             {dict.footer.description}
           </p>
+          <div className="flex items-center gap-4 mt-5">
+            <a
+              href="https://www.instagram.com/lahoradelcafe.tv"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-cream/30 hover:text-gold-400 transition-colors duration-300"
+            >
+              <Instagram className="w-5 h-5" strokeWidth={1.5} />
+            </a>
+            <a
+              href="https://youtube.com/@lahoradelcafecondt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-cream/30 hover:text-gold-400 transition-colors duration-300"
+            >
+              <Youtube className="w-5 h-5" strokeWidth={1.5} />
+            </a>
+          </div>
         </div>
 
         {/* Middle: single column on mobile, 3 cols on desktop */}

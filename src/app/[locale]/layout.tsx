@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Preloader from "@/components/ui/Preloader";
 import AnnouncementBar from "@/components/ui/AnnouncementBar";
+import FloatingSocial from "@/components/ui/FloatingSocial";
 import { getDictionary, type Locale } from "@/i18n/dictionaries";
 
 export async function generateStaticParams() {
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
       <ScrollProgress />
       <Navbar />
       <main>{children}</main>
+      <FloatingSocial />
     </div>
   );
 }

@@ -116,12 +116,12 @@
     "subtitle": "Trabajamos con marcas reconocidas de Venezuela y Colombia, respaldadas por certificaciones internacionales que abren las puertas a mercados globales.",
     "partnersLabel": "Marcas asociadas",
     "partners": [
-      { "name": "Codisum Roraima", "origin": "Venezuela" },
-      { "name": "Café Los Abuelos", "origin": "Venezuela" },
-      { "name": "Café Kofy.io", "origin": "Venezuela" },
-      { "name": "APROARCA C.A.", "origin": "Venezuela" },
-      { "name": "Turathi", "origin": "Colombia" },
-      { "name": "American Coffee Company", "origin": "Colombia" }
+      { "name": "Codisum Roraima", "origin": "Venezuela", "logo": "/logos/partners/codisum.jpg" },
+      { "name": "Café Los Abuelos", "origin": "Venezuela", "logo": "/logos/partners/los-abuelos.jpg" },
+      { "name": "Café Kofy.io", "origin": "Venezuela", "logo": "/logos/partners/kofy.png" },
+      { "name": "APROARCA C.A.", "origin": "Venezuela", "logo": "/logos/partners/aproarca.png" },
+      { "name": "Turathi", "origin": "Colombia", "logo": "/logos/partners/turathi.png" },
+      { "name": "American Coffee Company", "origin": "Colombia", "logo": "" }
     ],
     "fhaLabel": "Sectores FHA 2026",
     "fhaItems": [
@@ -135,13 +135,16 @@
     ],
     "certsLabel": "Certificaciones",
     "items": [
-      "Certificación Halal",
-      "Certificación Kósher",
-      "Apto para mercados islámicos",
-      "Apto para mercados judíos",
-      "Comercio internacional seguro",
-      "Estándares alimentarios globales"
+      { "icon": "/logos/certs/halal.svg", "label": "Certificación Halal" },
+      { "icon": "/logos/certs/kosher.svg", "label": "Certificación Kósher" }
     ]
+  },
+  "podcast": {
+    "surtitle": "La Hora del Café",
+    "title": "El podcast del café de especialidad",
+    "subtitle": "Conversaciones sobre origen, tostado, cultura cafetera y comercio internacional. Síguenos y no te pierdas ningún episodio.",
+    "ctaYoutube": "Suscribirse en YouTube",
+    "ctaInstagram": "Seguir en Instagram"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
