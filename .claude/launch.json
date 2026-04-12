@@ -7,14 +7,14 @@
       "runtimeArgs": ["/Users/sergio/Projects/gdc2026/dev.sh"],
       "port": 3000,
       "autoPort": true,
-      "cwd": "/Users/sergio/Projects/gdc2026"
+      "cwd": "."
     },
     {
       "name": "test-skill-remotion",
       "runtimeExecutable": "/opt/homebrew/bin/node",
       "runtimeArgs": ["node_modules/.bin/remotion", "studio", "src/index.ts"],
       "port": 3000,
-      "cwd": "/Users/sergio/Projects/test_skill"
+      "cwd": "."
     }
   ]
 }
