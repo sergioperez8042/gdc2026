@@ -24,7 +24,7 @@ export default function Footer({ dict }: FooterProps) {
           </p>
           <div className="flex items-center gap-4 mt-5">
             <a
-              href="https://www.instagram.com/lahoradelcafe.tv"
+              href="https://www.instagram.com/globaldc2025?utm_source=qr&igsh=NzQ0MTkzM20zNWJp"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
