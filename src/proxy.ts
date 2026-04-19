@@ -23,4 +23,7 @@ export const config = {
   // (static files: .png, .jpg, .svg, .ico, .txt, .xml, .webp, .woff2,
   // including App Router generated /icon.png and /apple-icon.png).
   matcher: ["/((?!_next|api|.*\\..*).*)"],
+  // Cloudflare Workers (OpenNext) only ejecuta Edge runtime.
+  // En Next.js 16 el default es Node.js, así que opt-in explícito.
+  runtime: "edge",
 };
