@@ -8,28 +8,20 @@ const nextConfig: NextConfig = {
   // y satura la CPU — causa el bloqueo de la PC al arrancar.
   reactCompiler: !isDev,
 
-  // Redirects de locale: reemplaza al antiguo proxy.ts (Next.js 16
-  // proxy.ts solo soporta runtime Node.js, incompatible con Cloudflare
-  // Workers que solo soporta Edge). Estas redirects las evalúa el CDN,
-  // no requieren runtime — funcionan en cualquier hosting.
-  async redirects() {
-    return [
-      // Raíz → /es
-      {
-        source: "/",
-        destination: "/es",
-        permanent: false,
-      },
-      // Cualquier path top-level que no sea /es, /en, /_next, /api,
-      // ni un archivo con extensión (contiene punto), redirige al locale.
-      // Doble negative lookahead en path-to-regexp.
-      {
-        source: "/:path((?!es$|en$|es/|en/|_next/|api/)(?!.*\\..*).+)",
-        destination: "/es/:path",
-        permanent: false,
-      },
-    ];
+  // Static export: genera HTML/CSS/JS plano en `out/`, sin runtime de
+  // servidor. Compatible con Cloudflare Pages, GitHub Pages, S3, etc.
+  // El sitio es 100% SSG, así que no perdemos nada.
+  output: "export",
+
+  // next/image con `output: export` requiere desactivar el optimizer
+  // (que necesita un servidor). Las imágenes se sirven tal cual.
+  images: {
+    unoptimized: true,
   },
+
+  // trailingSlash genera /es/index.html en vez de /es.html — más
+  // amigable para hosts estáticos que sirven directorios.
+  trailingSlash: true,
 };
 
 export default nextConfig;

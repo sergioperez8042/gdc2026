@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects
+# Reemplaza al antiguo proxy.ts (incompatible con static export).
+# Sintaxis: source destination [status]
+
+# Raíz → locale por defecto (español)
+/  /es/  302
+
+# Detección por header Accept-Language sería ideal pero requiere
+# Pages Functions. Por ahora redirect duro a /es; los usuarios EN
+# pueden cambiar manualmente al switcher de idioma.
