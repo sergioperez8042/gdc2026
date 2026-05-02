@@ -24,7 +24,7 @@ function EventCardContent({
 }) {
   return (
     <>
-      <div className="relative aspect-[16/10] overflow-hidden bg-dark-border">
+      <div className="relative aspect-16/10 overflow-hidden bg-dark-border">
         {hasVideo && event.video ? (
           <VideoPlayer
             src={event.video.src}
@@ -42,7 +42,7 @@ function EventCardContent({
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
           </>
         )}
 
@@ -81,8 +81,8 @@ export default function EventsSection({ dict, locale }: EventsSectionProps) {
 
   return (
     <section id="events" className="py-20 md:py-28 bg-dark relative overflow-hidden">
-      <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-gold-400/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-fresh-500/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[10%] left-[-5%] w-100 h-100 rounded-full bg-gold-400/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-5%] w-100 h-100 rounded-full bg-fresh-500/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>

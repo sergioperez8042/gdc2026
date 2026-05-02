@@ -32,12 +32,10 @@ export const ContactSchema = z.object({
     .min(1, ContactErrorCode.REQUIRED)
     .email(ContactErrorCode.INVALID_EMAIL)
     .max(200, ContactErrorCode.TOO_LONG),
-  phone: z
-    .string()
-    .trim()
-    .max(60, ContactErrorCode.TOO_LONG)
-    .optional()
-    .or(z.literal("").transform(() => undefined)),
+  phone: z.preprocess(
+    (value) => (typeof value === "string" && value.trim() === "" ? undefined : value),
+    z.string().trim().max(60, ContactErrorCode.TOO_LONG).optional(),
+  ),
   subject_topic: z
     .string()
     .trim()
