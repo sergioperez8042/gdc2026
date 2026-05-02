@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://globaldistribuidora.com"),
   title: {
     default:
-      "Global Distribuidora y Comercializadora, C.A. | Cafe Premium y Alimentos",
-    template: "%s | Global Distribuidora y Comercializadora",
+      "Global Distribuidora y Comercializadora C.A | Cafe Premium y Alimentos",
+    template: "%s | Global Distribuidora y Comercializadora C.A",
   },
   description:
     "Importacion y exportacion de cafe premium con trazabilidad completa. Distribucion internacional de alimentos con cadena de frio. Desde Venezuela al mundo.",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     "Venezuela coffee exporter",
     "specialty coffee SCA score 85",
   ],
-  authors: [{ name: "Global Distribuidora y Comercializadora, C.A." }],
+  authors: [{ name: "Global Distribuidora y Comercializadora C.A" }],
   openGraph: {
     type: "website",
     locale: "es_VE",
     alternateLocale: "en_US",
-    siteName: "Global Distribuidora y Comercializadora",
-    title: "Global Distribuidora y Comercializadora | Cafe Premium y Alimentos",
+    siteName: "Global Distribuidora y Comercializadora C.A",
+    title: "Global Distribuidora y Comercializadora C.A | Cafe Premium y Alimentos",
     description:
       "Su socio estrategico en comercio internacional de cafe premium y productos alimenticios. Presencia global, ferias internacionales (FHA Singapore 2026), trazabilidad completa.",
     images: [
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Global Distribuidora y Comercializadora | Cafe Premium",
+    title: "Global Distribuidora y Comercializadora C.A | Cafe Premium",
     description:
       "Importacion, exportacion y distribucion de cafe premium y alimentos de calidad superior.",
   },
@@ -124,7 +124,7 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                name: "Global Distribuidora y Comercializadora, C.A.",
+                name: "Global Distribuidora y Comercializadora C.A",
                 alternateName: "GDC",
                 description:
                   "Importacion y exportacion de cafe premium y distribucion de alimentos de calidad superior.",
@@ -171,7 +171,7 @@ export default function RootLayout({
                 embedUrl: "https://globaldccorp.com/#services",
                 publisher: {
                   "@type": "Organization",
-                  name: "Global Distribuidora y Comercializadora, C.A.",
+                  name: "Global Distribuidora y Comercializadora C.A",
                   logo: {
                     "@type": "ImageObject",
                     url: "https://globaldccorp.com/logos/gdc-logo-full.png",

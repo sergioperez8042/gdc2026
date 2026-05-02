@@ -25,7 +25,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               transition={{ duration: 0.6 }}
               className="text-gold-400 text-sm font-bold uppercase tracking-[0.2em] mb-6"
             >
-              Global Distribuidora y Comercializadora
+              Global Distribuidora y Comercializadora C.A
             </motion.p>
 
             <motion.h1

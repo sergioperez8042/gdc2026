@@ -1,5 +1,5 @@
 export const COMPANY = {
-  name: "Global Distribuidora y Comercializadora, C.A.",
+  name: "Global Distribuidora y Comercializadora C.A",
   shortName: "GDC",
   rif: "J-507783561",
   email: "info@globaldccorp.com",

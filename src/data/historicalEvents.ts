@@ -50,7 +50,7 @@ export const historicalEvents: HistoricalEvent[] = [
     // The poster doubles as the static image for SEO + social share previews.
     image: "/videos/fha-singapur-2026-poster.jpg",
     year: "2026",
-    edition: { es: "Edición 2026", en: "2026 Edition" },
+    edition: { es: "Singapur · Asia", en: "Singapore · Asia" },
     name: "Food Hospitality Asia (FHA) — Singapur",
     location: "Singapore Expo · Singapur",
     description: {
