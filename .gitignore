@@ -47,3 +47,7 @@ CORREO_*.txt
 Propuesta_*.pdf
 scripts/
 .claude/settings.local.json
+
+# Materiales raiz que no deben subirse
+Correo_Profesional_GDC.pdf
+FHA_Singapur_2026.mp4
