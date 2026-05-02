@@ -79,10 +79,10 @@
         "other": "Otro"
       },
       "message": "Cuéntenos sobre su proyecto o necesidad...",
-      "send": "Enviar por WhatsApp",
-      "sending": "Abriendo WhatsApp…",
-      "success": "Abriendo WhatsApp",
-      "successDescription": "Revisa la conversación y pulsa enviar para completar el envío.",
+      "send": "Enviar mensaje",
+      "sending": "Abriendo correo…",
+      "success": "Abriendo tu cliente de correo",
+      "successDescription": "Revisa el mensaje y pulsa enviar desde tu correo para completar el envío.",
       "error": "Revisa los campos marcados",
       "errorDescription": "Algunos datos faltan o no son válidos.",
       "errors": {

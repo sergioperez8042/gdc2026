@@ -41,3 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .claude/settings.local.json
+
+# Credenciales y materiales internos del cliente — NO subir
+CORREO_*.txt
+Propuesta_*.pdf
+scripts/
+.claude/settings.local.json

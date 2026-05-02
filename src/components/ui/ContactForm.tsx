@@ -95,13 +95,14 @@ export default function ContactForm({ dict }: ContactFormProps) {
       return;
     }
 
-    // Validation passed — build the WhatsApp URL and open it.
-    // useTransition gives us a pending state for the button so the user
-    // sees feedback even though this is technically synchronous.
+    // Validation passed — build the mailto: URL and open the user's mail
+    // client with the message pre-filled. Static export friendly: no backend,
+    // no third-party dependencies. The visitor reviews and presses send from
+    // their own client (Gmail / Outlook / Apple Mail).
     startTransition(() => {
       const { name, email, phone, subject_topic, message } = result.data;
-      const url = buildWhatsAppUrl({
-        phone: COMPANY.whatsapp,
+      const url = buildMailtoUrl({
+        to: COMPANY.email,
         name,
         email,
         userPhone: phone,
@@ -110,7 +111,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
       });
 
       toast.success(dict.success, dict.successDescription);
-      window.open(url, "_blank", "noopener,noreferrer");
+      // Use location.href instead of window.open: opening a tab to a mailto:
+      // URL leaves an empty tab behind in many browsers. location.href hands
+      // the URL to the OS handler without leaving an artifact.
+      window.location.href = url;
       form.reset();
       setFieldErrors({});
     });
@@ -269,35 +273,47 @@ function Field({
 
 // ---- Helpers ----
 
-interface BuildWhatsAppUrlInput {
-  phone: string;
+interface BuildMailtoUrlInput {
+  /** Destination mailbox (e.g. info@globaldccorp.com). */
+  to: string;
+  /** Visitor's name (used in body and reply-to context). */
   name: string;
+  /** Visitor's email (set as Reply-To so replies go to them, not to the form). */
   email: string;
+  /** Optional visitor phone. */
   userPhone?: string;
+  /** Subject category from the dropdown. */
   subject: string;
+  /** Free-text message body. */
   message: string;
 }
 
-function buildWhatsAppUrl({
-  phone,
+function buildMailtoUrl({
+  to,
   name,
   email,
   userPhone,
   subject,
   message,
-}: BuildWhatsAppUrlInput): string {
-  const lines = [
-    "*Nueva consulta web — GDC*",
+}: BuildMailtoUrlInput): string {
+  const bodyLines = [
+    `Nombre: ${name}`,
+    `Email: ${email}`,
+    userPhone ? `Teléfono: ${userPhone}` : null,
+    `Tipo de consulta: ${subject}`,
     "",
-    `*Nombre:* ${name}`,
-    `*Email:* ${email}`,
-    userPhone ? `*Teléfono:* ${userPhone}` : null,
-    `*Tipo de consulta:* ${subject}`,
-    "",
-    "*Mensaje:*",
+    "Mensaje:",
     message,
   ].filter(Boolean);
 
-  const text = encodeURIComponent(lines.join("\n"));
-  return `https://wa.me/${phone}?text=${text}`;
+  // mailto: spec requires query-string encoding for headers and body.
+  // Use URLSearchParams which handles the percent-encoding correctly,
+  // then post-process: spec wants `+` literal as `%20` inside mailto bodies
+  // (some mail clients otherwise render `+` as space).
+  const params = new URLSearchParams({
+    subject: `Consulta web — ${subject}`,
+    body: bodyLines.join("\n"),
+    "reply-to": email,
+  });
+  return `mailto:${to}?${params.toString().replace(/\+/g, "%20")}`;
 }

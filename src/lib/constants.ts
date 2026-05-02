@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "Global Distribuidora y Comercializadora, C.A.",
   shortName: "GDC",
   rif: "J-507783561",
-  email: "globaldistribuidora2025@gmail.com",
+  email: "info@globaldccorp.com",
   phone: {
     ve: "+58 416 832 53 85",
     es: "+34 686 72 77 15",

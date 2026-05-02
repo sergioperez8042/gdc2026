@@ -79,10 +79,10 @@
         "other": "Other"
       },
       "message": "Tell us about your project or need...",
-      "send": "Send via WhatsApp",
-      "sending": "Opening WhatsApp…",
-      "success": "Opening WhatsApp",
-      "successDescription": "Review the conversation and press send to complete the request.",
+      "send": "Send message",
+      "sending": "Opening mail client…",
+      "success": "Opening your mail client",
+      "successDescription": "Review the message and press send from your email to complete the request.",
       "error": "Please check the highlighted fields",
       "errorDescription": "Some fields are missing or invalid.",
       "errors": {
