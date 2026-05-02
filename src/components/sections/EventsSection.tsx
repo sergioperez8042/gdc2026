@@ -10,32 +10,28 @@ interface EventsSectionProps {
   locale: Locale;
 }
 
-// Card content extracted so we can render it inside either <a> or <article>
-// without duplicating JSX. Kept as a pure function component (module-level,
-// not defined inside EventsSection — avoids `rerender-no-inline-components`).
+// Module-level (not nested) to keep referential identity stable across re-renders.
 function EventCardContent({
   event,
   locale,
+  hasVideo,
+  showHoverArrow,
 }: {
   event: HistoricalEvent;
   locale: Locale;
+  hasVideo: boolean;
+  showHoverArrow: boolean;
 }) {
   return (
     <>
-      {/* Media: video player when event.video is set, otherwise static image.
-          When the card is a link <a>, the video can't go inside (would nest
-          interactive controls inside an anchor). The parent component handles
-          this — see EventsSection: events with video render as <article>, never
-          as <a>, and the video sits beside any external link button. */}
       <div className="relative aspect-[16/10] overflow-hidden bg-dark-border">
-        {event.video ? (
+        {hasVideo && event.video ? (
           <VideoPlayer
             src={event.video.src}
             srcWebm={event.video.webm}
             poster={event.video.poster}
             title={event.name}
             aspect="aspect-[16/10]"
-            className="!rounded-none"
           />
         ) : (
           <>
@@ -46,25 +42,21 @@ function EventCardContent({
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Bottom gradient for legibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
           </>
         )}
 
-        {/* Edition + year badge — overlay above the media (image or video poster) */}
         <div className="absolute top-4 left-4 z-10 bg-gold-400 text-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
           {event.edition[locale]} · {event.year}
         </div>
 
-        {/* External link arrow (only shown when card has url and is rendered as <a>) */}
-        {event.url && !event.video && (
+        {showHoverArrow && (
           <div className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-dark/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ArrowUpRight className="w-4 h-4 text-gold-300" strokeWidth={2} />
           </div>
         )}
       </div>
 
-      {/* Text content */}
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="font-heading text-xl font-bold text-cream mb-2 leading-tight group-hover:text-gold-300 transition-colors">
           {event.name}
@@ -83,14 +75,12 @@ const CARD_CLASSES =
   "group bg-dark-card border border-dark-border rounded-3xl overflow-hidden hover:border-gold-400/40 transition-all duration-300 h-full flex flex-col";
 
 export default function EventsSection({ dict, locale }: EventsSectionProps) {
-  // Render nothing when there is no data yet — satisfies "no mostrar nada".
   if (historicalEvents.length === 0) return null;
 
   const ev = dict.events;
 
   return (
     <section id="events" className="py-20 md:py-28 bg-dark relative overflow-hidden">
-      {/* Decorative blobs */}
       <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-gold-400/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-fresh-500/5 blur-[120px] pointer-events-none" />
 
@@ -107,15 +97,26 @@ export default function EventsSection({ dict, locale }: EventsSectionProps) {
           </div>
         </ScrollReveal>
 
-        {/* Grid: 1 col mobile, 2 cols tablet, 3 cols desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {historicalEvents.map((event, i) => {
-            // When an event has a video, the whole card MUST NOT be an <a>:
-            // a video player has its own interactive controls and nesting them
-            // inside an anchor breaks accessibility (and HTML spec). Instead we
-            // render an <article> and put a separate "official site" link in
-            // the body when there is a url.
-            const wrapAsLink = event.url && !event.video;
+            const hasVideo = !!event.video;
+            const hasUrl = !!event.url;
+            // Video has its own interactive controls — can't nest in <a>.
+            // When the card has a video, render <article> and surface the
+            // url (if any) as a separate "official site" link in the body.
+            const wrapAsLink = hasUrl && !hasVideo;
+            const showHoverArrow = wrapAsLink;
+            const showSiteLink = hasUrl && hasVideo;
+
+            const content = (
+              <EventCardContent
+                event={event}
+                locale={locale}
+                hasVideo={hasVideo}
+                showHoverArrow={showHoverArrow}
+              />
+            );
+
             return (
               <ScrollReveal key={`${event.name}-${event.year}-${i}`} delay={i * 0.08}>
                 {wrapAsLink ? (
@@ -125,12 +126,12 @@ export default function EventsSection({ dict, locale }: EventsSectionProps) {
                     rel="noopener noreferrer"
                     className={CARD_CLASSES}
                   >
-                    <EventCardContent event={event} locale={locale} />
+                    {content}
                   </a>
                 ) : (
                   <article className={CARD_CLASSES}>
-                    <EventCardContent event={event} locale={locale} />
-                    {event.url && event.video && (
+                    {content}
+                    {showSiteLink && (
                       <a
                         href={event.url}
                         target="_blank"

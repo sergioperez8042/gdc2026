@@ -8,7 +8,6 @@ export const COMPANY = {
     es: "+34 686 72 77 15",
   },
   // Digits-only format required by wa.me URL scheme (no +, no spaces).
-  // Numero de Espana — el WhatsApp comercial de la empresa.
   whatsapp: "34686727715",
   address: {
     street: "Av. el cortijo, casa #55",

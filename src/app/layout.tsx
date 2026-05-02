@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Lato } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/contexts/ToastContext";
+import { COMPANY } from "@/lib/constants";
+
+const SITE_URL = "https://globaldccorp.com";
+const VIDEO_URL = `${SITE_URL}/videos/fha-singapur-2026.mp4`;
+const POSTER_URL = `${SITE_URL}/videos/fha-singapur-2026-poster.jpg`;
+const LOGO_URL = `${SITE_URL}/logos/gdc-logo-full.png`;
+
+// `+34 686 72 77 15` -> `+34-686-727715`
+const e164Hyphenated = (phone: string) => phone.replace(/\s+/g, "-").replace(/--/g, "-");
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-playfair",
@@ -18,7 +27,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://globaldistribuidora.com"),
+  metadataBase: new URL("https://globaldccorp.com"),
   title: {
     default:
       "Global Distribuidora y Comercializadora C.A | Cafe Premium y Alimentos",
@@ -124,24 +133,24 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                name: "Global Distribuidora y Comercializadora C.A",
-                alternateName: "GDC",
+                name: COMPANY.name,
+                alternateName: COMPANY.shortName,
                 description:
                   "Importacion y exportacion de cafe premium y distribucion de alimentos de calidad superior.",
-                url: "https://globaldccorp.com",
-                logo: "https://globaldccorp.com/logos/gdc-logo-full.png",
-                email: "info@globaldccorp.com",
+                url: SITE_URL,
+                logo: LOGO_URL,
+                email: COMPANY.email,
                 contactPoint: [
                   {
                     "@type": "ContactPoint",
-                    telephone: "+58-416-832-5385",
+                    telephone: e164Hyphenated(COMPANY.phone.ve),
                     contactType: "sales",
                     areaServed: "VE",
                     availableLanguage: ["Spanish", "English"],
                   },
                   {
                     "@type": "ContactPoint",
-                    telephone: "+34-686-727715",
+                    telephone: e164Hyphenated(COMPANY.phone.es),
                     contactType: "sales",
                     areaServed: "ES",
                     availableLanguage: ["Spanish", "English"],
@@ -149,9 +158,9 @@ export default function RootLayout({
                 ],
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: "Av. el cortijo, casa #55",
-                  addressLocality: "Caracas",
-                  addressRegion: "Distrito Capital",
+                  streetAddress: COMPANY.address.street,
+                  addressLocality: COMPANY.address.city,
+                  addressRegion: COMPANY.address.state,
                   addressCountry: "VE",
                 },
                 sameAs: [],
@@ -159,23 +168,18 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
-                name: "Global Distribuidora Corp en FHA Singapore 2026",
+                name: `${COMPANY.shortName} en FHA Singapore 2026`,
                 description:
                   "Participacion de Global Distribuidora y Comercializadora (GDC) en Food Hospitality Asia Singapore 2026, presentando cafe premium de Merida (Venezuela) y servicios de representacion empresarial internacional.",
-                thumbnailUrl: [
-                  "https://globaldccorp.com/videos/fha-singapur-2026-poster.jpg",
-                ],
+                thumbnailUrl: [POSTER_URL],
                 uploadDate: "2026-05-02",
                 duration: "PT34S",
-                contentUrl: "https://globaldccorp.com/videos/fha-singapur-2026.mp4",
-                embedUrl: "https://globaldccorp.com/#services",
+                contentUrl: VIDEO_URL,
+                embedUrl: `${SITE_URL}/#events`,
                 publisher: {
                   "@type": "Organization",
-                  name: "Global Distribuidora y Comercializadora C.A",
-                  logo: {
-                    "@type": "ImageObject",
-                    url: "https://globaldccorp.com/logos/gdc-logo-full.png",
-                  },
+                  name: COMPANY.name,
+                  logo: { "@type": "ImageObject", url: LOGO_URL },
                 },
                 inLanguage: "es",
                 isFamilyFriendly: true,

@@ -1,18 +1,6 @@
 /**
  * Historical events GDC has participated in.
- *
- * HOW TO ADD A NEW EVENT:
- *   1. Add a new object to the `historicalEvents` array below.
- *   2. Place the image in `public/events/` and reference it as `/events/filename.jpg`.
- *      Recommended: 1600x1000px, JPG q92, landscape (16:10 aspect ratio).
- *   3. (Optional) If the event has a video, place the file under
- *      `public/videos/` and add a `video` block with paths to mp4, optional
- *      webm, and a poster JPG. The card will render a click-to-play player
- *      instead of the static image.
- *   4. Fill in year, edition, name, location, and bilingual description.
- *   5. Events render in the order defined here (most recent first is recommended).
- *
- * The EventsSection renders nothing when this array is empty.
+ * EventsSection renders nothing when this array is empty.
  */
 
 export type HistoricalEvent = {
