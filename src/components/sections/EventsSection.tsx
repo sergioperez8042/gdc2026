@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MapPin, ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 import type { Dictionary, Locale } from "@/i18n/dictionaries";
 import { historicalEvents, type HistoricalEvent } from "@/data/historicalEvents";
 
@@ -21,26 +22,43 @@ function EventCardContent({
 }) {
   return (
     <>
-      {/* Image */}
+      {/* Media: video player when event.video is set, otherwise static image.
+          When the card is a link <a>, the video can't go inside (would nest
+          interactive controls inside an anchor). The parent component handles
+          this — see EventsSection: events with video render as <article>, never
+          as <a>, and the video sits beside any external link button. */}
       <div className="relative aspect-[16/10] overflow-hidden bg-dark-border">
-        <Image
-          src={event.image}
-          alt={event.name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        {/* Bottom gradient for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
+        {event.video ? (
+          <VideoPlayer
+            src={event.video.src}
+            srcWebm={event.video.webm}
+            poster={event.video.poster}
+            title={event.name}
+            aspect="aspect-[16/10]"
+            className="!rounded-none"
+          />
+        ) : (
+          <>
+            <Image
+              src={event.image}
+              alt={event.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Bottom gradient for legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent pointer-events-none" />
+          </>
+        )}
 
-        {/* Edition + year badge */}
-        <div className="absolute top-4 left-4 bg-gold-400 text-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+        {/* Edition + year badge — overlay above the media (image or video poster) */}
+        <div className="absolute top-4 left-4 z-10 bg-gold-400 text-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
           {event.edition[locale]} · {event.year}
         </div>
 
-        {/* External link arrow (only shown when card has url) */}
-        {event.url && (
-          <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-dark/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* External link arrow (only shown when card has url and is rendered as <a>) */}
+        {event.url && !event.video && (
+          <div className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-dark/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ArrowUpRight className="w-4 h-4 text-gold-300" strokeWidth={2} />
           </div>
         )}
@@ -91,24 +109,43 @@ export default function EventsSection({ dict, locale }: EventsSectionProps) {
 
         {/* Grid: 1 col mobile, 2 cols tablet, 3 cols desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {historicalEvents.map((event, i) => (
-            <ScrollReveal key={`${event.name}-${event.year}-${i}`} delay={i * 0.08}>
-              {event.url ? (
-                <a
-                  href={event.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={CARD_CLASSES}
-                >
-                  <EventCardContent event={event} locale={locale} />
-                </a>
-              ) : (
-                <article className={CARD_CLASSES}>
-                  <EventCardContent event={event} locale={locale} />
-                </article>
-              )}
-            </ScrollReveal>
-          ))}
+          {historicalEvents.map((event, i) => {
+            // When an event has a video, the whole card MUST NOT be an <a>:
+            // a video player has its own interactive controls and nesting them
+            // inside an anchor breaks accessibility (and HTML spec). Instead we
+            // render an <article> and put a separate "official site" link in
+            // the body when there is a url.
+            const wrapAsLink = event.url && !event.video;
+            return (
+              <ScrollReveal key={`${event.name}-${event.year}-${i}`} delay={i * 0.08}>
+                {wrapAsLink ? (
+                  <a
+                    href={event.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={CARD_CLASSES}
+                  >
+                    <EventCardContent event={event} locale={locale} />
+                  </a>
+                ) : (
+                  <article className={CARD_CLASSES}>
+                    <EventCardContent event={event} locale={locale} />
+                    {event.url && event.video && (
+                      <a
+                        href={event.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mx-6 mb-6 -mt-2 inline-flex items-center gap-1.5 self-start text-xs font-semibold text-gold-400 hover:text-gold-300 transition-colors"
+                      >
+                        Sitio oficial del evento
+                        <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
+                      </a>
+                    )}
+                  </article>
+                )}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
