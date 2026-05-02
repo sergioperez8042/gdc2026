@@ -35,8 +35,10 @@ export type HistoricalEvent = {
 
 export const historicalEvents: HistoricalEvent[] = [
   {
-    // The poster doubles as the static image for SEO + social share previews.
-    image: "/videos/fha-singapur-2026-poster.jpg",
+    // Media hosted on Cloudflare R2 (media.globaldccorp.com) to keep the
+    // repo light and Pages builds fast. Poster doubles as the static image
+    // for SEO + social share previews.
+    image: "https://media.globaldccorp.com/fha-singapur-2026-poster.jpg",
     year: "2026",
     edition: { es: "Singapur · Asia", en: "Singapore · Asia" },
     name: "Food Hospitality Asia (FHA) — Singapur",
@@ -46,9 +48,9 @@ export const historicalEvents: HistoricalEvent[] = [
       en: "We presented our specialty coffee from Mérida (Venezuela) — APROARCA, Castillo, washed, SCA 85 — to Asian buyers and built strategic relationships with roasters and distributors in the region.",
     },
     video: {
-      src: "/videos/fha-singapur-2026.mp4",
-      webm: "/videos/fha-singapur-2026.webm",
-      poster: "/videos/fha-singapur-2026-poster.jpg",
+      src: "https://media.globaldccorp.com/fha-singapur-2026.mp4",
+      webm: "https://media.globaldccorp.com/fha-singapur-2026.webm",
+      poster: "https://media.globaldccorp.com/fha-singapur-2026-poster.jpg",
     },
     url: "https://www.foodnhotelasia.com/",
   },

@@ -5,8 +5,11 @@ import { ToastProvider } from "@/contexts/ToastContext";
 import { COMPANY } from "@/lib/constants";
 
 const SITE_URL = "https://globaldccorp.com";
-const VIDEO_URL = `${SITE_URL}/videos/fha-singapur-2026.mp4`;
-const POSTER_URL = `${SITE_URL}/videos/fha-singapur-2026-poster.jpg`;
+// Heavy media (videos + poster) lives on Cloudflare R2 under a custom
+// domain to keep the static export bundle small and Pages builds fast.
+const MEDIA_CDN = "https://media.globaldccorp.com";
+const VIDEO_URL = `${MEDIA_CDN}/fha-singapur-2026.mp4`;
+const POSTER_URL = `${MEDIA_CDN}/fha-singapur-2026-poster.jpg`;
 const LOGO_URL = `${SITE_URL}/logos/gdc-logo-full.png`;
 
 // `+34 686 72 77 15` -> `+34-686-727715`
@@ -77,7 +80,7 @@ export const metadata: Metadata = {
         alt: "Global Distribuidora - Cafe Premium y Distribucion de Alimentos",
       },
       {
-        url: "/videos/fha-singapur-2026-poster.jpg",
+        url: POSTER_URL,
         width: 1920,
         height: 1080,
         alt: "Global Distribuidora Corp en FHA Singapore 2026 - Food Hospitality Asia",
@@ -85,8 +88,8 @@ export const metadata: Metadata = {
     ],
     videos: [
       {
-        url: "https://globaldccorp.com/videos/fha-singapur-2026.mp4",
-        secureUrl: "https://globaldccorp.com/videos/fha-singapur-2026.mp4",
+        url: VIDEO_URL,
+        secureUrl: VIDEO_URL,
         type: "video/mp4",
         width: 1920,
         height: 1080,
