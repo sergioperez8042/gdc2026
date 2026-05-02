@@ -1,6 +1,7 @@
-import { CircleCheck, Globe2, Mail, MessageCircle } from "lucide-react";
+import { CircleCheck, Mail, MessageCircle } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CardCarousel from "@/components/ui/CardCarousel";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 import { COMPANY } from "@/lib/constants";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -89,37 +90,23 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
         </div>
 
         {/* Corporate representation card — full width below the two product cards.
-            Conceptual service (no product gallery), so we use a Lucide icon hero
-            and CTAs to email + WhatsApp instead of a CardCarousel. */}
+            Featured proof: video of Darwin (CEO) at FHA Singapore 2026 international
+            food trade fair — perfect "show, don't tell" of the international
+            representation service we're advertising in this card. */}
         <ScrollReveal delay={0.3}>
           <div className="service-card card-3d bg-dark-card border border-dark-border rounded-3xl p-8 lg:p-10 mt-8 lg:mt-10">
-            <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 lg:gap-10 items-center">
-              {/* Icon hero — stylized "international expansion" placeholder.
-                  Globe centered with radial glow + decorative ring + concentric
-                  dotted circles to evoke global reach without needing photos. */}
-              <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-gold-400/10 via-gold-400/5 to-transparent border border-gold-400/20 rounded-2xl aspect-square lg:aspect-auto lg:h-full p-8 min-h-[260px]">
-                {/* Soft radial glow behind the globe */}
-                <div className="absolute inset-1/4 rounded-full bg-gold-400/15 blur-3xl" aria-hidden="true" />
-                {/* Outer dotted ring */}
-                <div
-                  className="absolute inset-6 rounded-full border border-dashed border-gold-400/25"
-                  aria-hidden="true"
-                />
-                {/* Inner faint ring */}
-                <div
-                  className="absolute inset-12 rounded-full border border-gold-400/10"
-                  aria-hidden="true"
-                />
-                {/* Globe icon */}
-                <Globe2
-                  className="relative w-28 h-28 lg:w-36 lg:h-36 text-gold-400 drop-shadow-[0_0_20px_rgba(212,175,55,0.25)]"
-                  strokeWidth={1.1}
-                />
-                {/* Caption under the globe */}
-                <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400/70">
-                  Worldwide
-                </span>
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-8 lg:gap-10 items-center">
+              {/* Video hero — proof of international presence at FHA Singapore 2026.
+                  Click-to-play (no autoplay) keeps Core Web Vitals clean and gives
+                  the user control. WebM source served first to modern browsers
+                  for smaller payload. */}
+              <VideoPlayer
+                src="/videos/fha-singapur-2026.mp4"
+                srcWebm="/videos/fha-singapur-2026.webm"
+                poster="/videos/fha-singapur-2026-poster.jpg"
+                title="Food Hospitality Asia Singapore 2026"
+                aspect="aspect-video"
+              />
 
               {/* Content */}
               <div>
