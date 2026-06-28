@@ -49,9 +49,6 @@ export default function Navbar() {
             height={56}
             className="w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="text-cream text-xl sm:text-2xl font-bold tracking-tight">
-            Global
-          </span>
         </a>
 
         {/* Desktop Nav */}
