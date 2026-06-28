@@ -61,21 +61,31 @@ describe("sendViaResend", () => {
     reply_to: "juan@example.com",
   };
 
-  it("returns ok with the email id on a successful response", async () => {
+  it("returns ok with the email id on a successful response (REST top-level id)", async () => {
     const fetchImpl = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      json: async () => ({ data: { id: "abc-123" }, error: null }),
+      json: async () => ({ id: "abc-123" }),
     });
     const result = await sendViaResend(payload, "re_test", fetchImpl as unknown as typeof fetch);
     expect(result).toEqual({ ok: true, id: "abc-123" });
+  });
+
+  it("also accepts the SDK-wrapped { data: { id } } shape", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ data: { id: "sdk-1" }, error: null }),
+    });
+    const result = await sendViaResend(payload, "re_test", fetchImpl as unknown as typeof fetch);
+    expect(result).toEqual({ ok: true, id: "sdk-1" });
   });
 
   it("calls the Resend endpoint with a Bearer token and JSON payload", async () => {
     const fetchImpl = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
-      json: async () => ({ data: { id: "abc-123" }, error: null }),
+      json: async () => ({ id: "abc-123" }),
     });
     await sendViaResend(payload, "re_test", fetchImpl as unknown as typeof fetch);
     const [url, init] = fetchImpl.mock.calls[0];
@@ -89,7 +99,7 @@ describe("sendViaResend", () => {
     const fetchImpl = vi.fn().mockResolvedValue({
       ok: false,
       status: 422,
-      json: async () => ({ data: null, error: { message: "Invalid recipient" } }),
+      json: async () => ({ statusCode: 422, name: "validation_error", message: "Invalid recipient" }),
     });
     const result = await sendViaResend(payload, "re_test", fetchImpl as unknown as typeof fetch);
     expect(result.ok).toBe(false);

@@ -77,11 +77,23 @@ export async function sendViaResend(
   }
 
   const body = (await res.json().catch(() => null)) as
-    | { data?: { id?: string } | null; error?: { message?: string } | null }
+    | {
+        id?: string;
+        data?: { id?: string } | null;
+        error?: { message?: string } | null;
+        message?: string;
+      }
     | null;
 
-  if (res.ok && body?.data?.id) {
-    return { ok: true, id: body.data.id };
+  // Resend's REST API returns the id at the TOP LEVEL: { "id": "..." }.
+  // The Node SDK wraps it as { data: { id } } — accept both so this works
+  // whether we call the REST endpoint directly or swap in the SDK later.
+  const id = body?.id ?? body?.data?.id;
+  if (res.ok && id) {
+    return { ok: true, id };
   }
-  return { ok: false, error: body?.error?.message ?? `HTTP ${res.status}` };
+  return {
+    ok: false,
+    error: body?.error?.message ?? body?.message ?? `HTTP ${res.status}`,
+  };
 }
