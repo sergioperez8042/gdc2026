@@ -35,16 +35,23 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo - hidden during preloader */}
-        <a href="#" aria-label="Inicio">
+        <a
+          href="#"
+          aria-label="Inicio"
+          className={`group flex items-center gap-2.5 transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <Image
             src="/logos/gdc-isotipo.png"
             alt="Global Distribuidora y Comercializadora C.A"
-            width={100}
-            height={100}
-            className={`transition-all duration-500 hover:scale-105 ${
-              loaded ? "opacity-100" : "opacity-0"
-            }`}
+            width={56}
+            height={56}
+            className="w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-500 group-hover:scale-105"
           />
+          <span className="text-cream text-xl sm:text-2xl font-bold tracking-tight">
+            Global
+          </span>
         </a>
 
         {/* Desktop Nav */}
