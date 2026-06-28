@@ -1,6 +1,7 @@
 import { CircleCheck, Globe2, Mail, MessageCircle } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CardCarousel from "@/components/ui/CardCarousel";
+import EmailLink from "@/components/ui/EmailLink";
 import { COMPANY } from "@/lib/constants";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -132,13 +133,16 @@ export default function ServicesSection({ dict }: ServicesSectionProps) {
                   {dict.services.representation.cta}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
+                  <EmailLink
+                    email={COMPANY.email}
                     href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(dict.services.representation.title)}`}
+                    copiedLabel={dict.contact.info.emailCopied}
+                    copiedDescription={dict.contact.info.emailCopiedDescription}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-400 hover:bg-gold-500 text-dark font-semibold px-5 py-2.5 transition-colors text-sm"
                   >
                     <Mail className="w-4 h-4" strokeWidth={2.2} />
                     {COMPANY.email}
-                  </a>
+                  </EmailLink>
                   <a
                     href={`https://wa.me/${COMPANY.whatsapp}`}
                     target="_blank"

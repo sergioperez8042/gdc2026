@@ -33,6 +33,13 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 !.env.example
+.dev.vars
+
+# cloudflare pages / wrangler
+.wrangler
+
+# playwright mcp artifacts
+.playwright-mcp/
 
 # vercel
 .vercel
@@ -51,3 +58,4 @@ scripts/
 # Materiales raiz que no deben subirse
 Correo_Profesional_GDC.pdf
 FHA_Singapur_2026.mp4
+.codegraph/

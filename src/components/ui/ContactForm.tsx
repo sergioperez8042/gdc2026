@@ -16,7 +16,6 @@ import {
   type ContactFieldErrors,
   type ContactFieldName,
 } from "@/lib/contactSchema";
-import { COMPANY } from "@/lib/constants";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface ContactFormProps {
@@ -95,28 +94,27 @@ export default function ContactForm({ dict }: ContactFormProps) {
       return;
     }
 
-    // Validation passed — build the mailto: URL and open the user's mail
-    // client with the message pre-filled. Static export friendly: no backend,
-    // no third-party dependencies. The visitor reviews and presses send from
-    // their own client (Gmail / Outlook / Apple Mail).
-    startTransition(() => {
-      const { name, email, phone, subject_topic, message } = result.data;
-      const url = buildMailtoUrl({
-        to: COMPANY.email,
-        name,
-        email,
-        userPhone: phone,
-        subject: subject_topic,
-        message,
-      });
+    // Validation passed — submit to the Cloudflare Pages Function, which sends
+    // the email server-side via Resend. This does NOT depend on the visitor
+    // having a mail client configured (the old mailto: flow silently failed on
+    // tablets / kiosks with no mail handler). React 19's startTransition awaits
+    // the async callback and keeps `pending` true for the whole request.
+    startTransition(async () => {
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(result.data),
+        });
 
-      toast.success(dict.success, dict.successDescription);
-      // Use location.href instead of window.open: opening a tab to a mailto:
-      // URL leaves an empty tab behind in many browsers. location.href hands
-      // the URL to the OS handler without leaving an artifact.
-      window.location.href = url;
-      form.reset();
-      setFieldErrors({});
+        if (!res.ok) throw new Error(`Request failed with ${res.status}`);
+
+        toast.success(dict.success, dict.successDescription);
+        form.reset();
+        setFieldErrors({});
+      } catch {
+        toast.error(dict.sendError, dict.sendErrorDescription);
+      }
     });
   };
 
@@ -269,51 +267,4 @@ function Field({
       )}
     </div>
   );
-}
-
-// ---- Helpers ----
-
-interface BuildMailtoUrlInput {
-  /** Destination mailbox (e.g. info@globaldccorp.com). */
-  to: string;
-  /** Visitor's name (used in body and reply-to context). */
-  name: string;
-  /** Visitor's email (set as Reply-To so replies go to them, not to the form). */
-  email: string;
-  /** Optional visitor phone. */
-  userPhone?: string;
-  /** Subject category from the dropdown. */
-  subject: string;
-  /** Free-text message body. */
-  message: string;
-}
-
-function buildMailtoUrl({
-  to,
-  name,
-  email,
-  userPhone,
-  subject,
-  message,
-}: BuildMailtoUrlInput): string {
-  const bodyLines = [
-    `Nombre: ${name}`,
-    `Email: ${email}`,
-    userPhone ? `Teléfono: ${userPhone}` : null,
-    `Tipo de consulta: ${subject}`,
-    "",
-    "Mensaje:",
-    message,
-  ].filter(Boolean);
-
-  // mailto: spec requires query-string encoding for headers and body.
-  // Use URLSearchParams which handles the percent-encoding correctly,
-  // then post-process: spec wants `+` literal as `%20` inside mailto bodies
-  // (some mail clients otherwise render `+` as space).
-  const params = new URLSearchParams({
-    subject: `Consulta web — ${subject}`,
-    body: bodyLines.join("\n"),
-    "reply-to": email,
-  });
-  return `mailto:${to}?${params.toString().replace(/\+/g, "%20")}`;
 }

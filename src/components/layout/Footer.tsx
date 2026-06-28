@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Instagram, Youtube } from "lucide-react";
+import EmailLink from "@/components/ui/EmailLink";
 import { COMPANY } from "@/lib/constants";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -85,9 +86,14 @@ export default function Footer({ dict }: FooterProps) {
             <h4 className="text-cream font-semibold mb-3 text-xs uppercase tracking-wider">
               {dict.contact.info.emailLabel}
             </h4>
-            <a href={`mailto:${COMPANY.email}`} className="text-cream/35 hover:text-gold-400 text-sm transition-colors duration-300 break-all">
+            <EmailLink
+              email={COMPANY.email}
+              copiedLabel={dict.contact.info.emailCopied}
+              copiedDescription={dict.contact.info.emailCopiedDescription}
+              className="text-cream/35 hover:text-gold-400 text-sm transition-colors duration-300 break-all"
+            >
               {COMPANY.email}
-            </a>
+            </EmailLink>
           </div>
         </div>
 

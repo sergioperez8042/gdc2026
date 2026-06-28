@@ -91,11 +91,13 @@
       },
       "message": "Tell us about your project or need...",
       "send": "Send message",
-      "sending": "Opening mail client…",
-      "success": "Opening your mail client",
-      "successDescription": "Review the message and press send from your email to complete the request.",
+      "sending": "Sending…",
+      "success": "Message sent",
+      "successDescription": "Thanks for reaching out. We'll get back to you as soon as possible.",
       "error": "Please check the highlighted fields",
       "errorDescription": "Some fields are missing or invalid.",
+      "sendError": "Couldn't send your message",
+      "sendErrorDescription": "Please try again in a few minutes or email us at info@globaldccorp.com.",
       "errors": {
         "REQUIRED": "This field is required",
         "INVALID_EMAIL": "Invalid email address",
@@ -106,7 +108,9 @@
     "info": {
       "address": "Address",
       "phones": "Phone numbers",
-      "emailLabel": "Email"
+      "emailLabel": "Email",
+      "emailCopied": "Email copied",
+      "emailCopiedDescription": "Paste it into your mail client to write to us."
     }
   },
   "events": {

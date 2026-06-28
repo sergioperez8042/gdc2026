@@ -91,11 +91,13 @@
       },
       "message": "Cuéntenos sobre su proyecto o necesidad...",
       "send": "Enviar mensaje",
-      "sending": "Abriendo correo…",
-      "success": "Abriendo tu cliente de correo",
-      "successDescription": "Revisa el mensaje y pulsa enviar desde tu correo para completar el envío.",
+      "sending": "Enviando…",
+      "success": "Mensaje enviado",
+      "successDescription": "Gracias por escribirnos. Te responderemos lo antes posible.",
       "error": "Revisa los campos marcados",
       "errorDescription": "Algunos datos faltan o no son válidos.",
+      "sendError": "No se pudo enviar el mensaje",
+      "sendErrorDescription": "Inténtalo de nuevo en unos minutos o escríbenos a info@globaldccorp.com.",
       "errors": {
         "REQUIRED": "Este campo es obligatorio",
         "INVALID_EMAIL": "Correo electrónico inválido",
@@ -106,7 +108,9 @@
     "info": {
       "address": "Dirección",
       "phones": "Teléfonos",
-      "emailLabel": "Correo"
+      "emailLabel": "Correo",
+      "emailCopied": "Correo copiado",
+      "emailCopiedDescription": "Pégalo en tu cliente de correo para escribirnos."
     }
   },
   "events": {
