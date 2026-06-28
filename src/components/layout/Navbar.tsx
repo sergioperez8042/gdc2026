@@ -37,8 +37,8 @@ export default function Navbar() {
         {/* Logo - hidden during preloader */}
         <a href="#" aria-label="Inicio">
           <Image
-            src="/logos/gdc-logo-full.png"
-            alt="GDC"
+            src="/logos/gdc-isotipo.png"
+            alt="Global Distribuidora y Comercializadora C.A"
             width={100}
             height={100}
             className={`transition-all duration-500 hover:scale-105 ${
