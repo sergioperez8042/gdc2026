@@ -35,6 +35,22 @@ export type HistoricalEvent = {
 
 export const historicalEvents: HistoricalEvent[] = [
   {
+    // SIGEP Asia 2026 — media on Cloudflare R2 (media.globaldccorp.com).
+    image: "https://media.globaldccorp.com/sigep-asia-2026-poster.jpg",
+    year: "2026",
+    edition: { es: "Singapur · Asia", en: "Singapore · Asia" },
+    name: "SIGEP Asia 2026 — Singapur",
+    location: "Singapur",
+    description: {
+      es: "Presentamos nuestro café de especialidad venezolano junto a APROARCA en SIGEP Asia, el escaparate del foodservice del Sudeste Asiático, generando contactos con tostadores, distribuidores y compradores de toda la región.",
+      en: "We showcased our Venezuelan specialty coffee alongside APROARCA at SIGEP Asia, Southeast Asia's foodservice showcase, connecting with roasters, distributors and buyers from across the region.",
+    },
+    video: {
+      src: "https://media.globaldccorp.com/sigep-asia-2026.mp4",
+      poster: "https://media.globaldccorp.com/sigep-asia-2026-poster.jpg",
+    },
+  },
+  {
     // Media hosted on Cloudflare R2 (media.globaldccorp.com) to keep the
     // repo light and Pages builds fast. Poster doubles as the static image
     // for SEO + social share previews.

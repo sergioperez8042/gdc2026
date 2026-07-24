@@ -136,7 +136,8 @@
       { "name": "Café Kofy.io", "origin": "Venezuela", "logo": "/logos/partners/kofy.png" },
       { "name": "APROARCA C.A.", "origin": "Venezuela", "logo": "/logos/partners/aproarca.png" },
       { "name": "Turathi", "origin": "Colombia", "logo": "/logos/partners/turathi.png" },
-      { "name": "American Coffee Company", "origin": "Colombia", "logo": "" }
+      { "name": "American Coffee Company", "origin": "Colombia", "logo": "" },
+      { "name": "Olimpic Aduanera", "origin": "Venezuela", "logo": "/logos/partners/olimpic.png" }
     ],
     "fhaLabel": "FHA 2026 Sectors",
     "fhaItems": [
