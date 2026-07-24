@@ -31,6 +31,7 @@ function EventCardContent({
             srcWebm={event.video.webm}
             poster={event.video.poster}
             title={event.name}
+            label={event.label}
             aspect="aspect-[16/10]"
           />
         ) : (

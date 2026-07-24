@@ -13,6 +13,8 @@ interface VideoPlayerProps {
   poster: string;
   /** Accessible label for the play button + alt text for poster. */
   title: string;
+  /** Short uppercase tag shown above the title on the poster (e.g. "SIGEP Asia 2026"). */
+  label?: string;
   /** Tailwind classes for the outer container — caller controls border-radius. */
   className?: string;
   /** Aspect ratio class (default 16:9). */
@@ -29,6 +31,7 @@ export default function VideoPlayer({
   srcWebm,
   poster,
   title,
+  label,
   className = "",
   aspect = "aspect-video",
 }: VideoPlayerProps) {
@@ -81,9 +84,11 @@ export default function VideoPlayer({
           </span>
         </span>
         <span className="absolute bottom-4 left-4 right-4 text-left">
-          <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-gold-400">
-            FHA Singapore 2026
-          </span>
+          {label && (
+            <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-gold-400">
+              {label}
+            </span>
+          )}
           <span className="block text-sm font-semibold text-white drop-shadow-lg">
             {title}
           </span>

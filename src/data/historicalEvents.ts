@@ -15,6 +15,8 @@ export type HistoricalEvent = {
   };
   /** Official event name (usually not translated). */
   name: string;
+  /** Short uppercase tag shown on the video poster (e.g. "SIGEP Asia 2026"). */
+  label?: string;
   /** City + venue, e.g. "IFEMA Madrid". */
   location: string;
   /** One-line description of GDC's participation (bilingual). */
@@ -40,6 +42,7 @@ export const historicalEvents: HistoricalEvent[] = [
     year: "2026",
     edition: { es: "Singapur · Asia", en: "Singapore · Asia" },
     name: "SIGEP Asia 2026 — Singapur",
+    label: "SIGEP Asia 2026",
     location: "Singapur",
     description: {
       es: "Presentamos nuestro café de especialidad venezolano junto a APROARCA en SIGEP Asia, el escaparate del foodservice del Sudeste Asiático, generando contactos con tostadores, distribuidores y compradores de toda la región.",
@@ -58,6 +61,7 @@ export const historicalEvents: HistoricalEvent[] = [
     year: "2026",
     edition: { es: "Singapur · Asia", en: "Singapore · Asia" },
     name: "Food Hospitality Asia (FHA) — Singapur",
+    label: "FHA Singapore 2026",
     location: "Singapore Expo · Singapur",
     description: {
       es: "Presentamos nuestro café de especialidad de Mérida (Venezuela) — APROARCA, Castillo, lavado, SCA 85 — a compradores asiáticos y consolidamos relaciones estratégicas con tostadores y distribuidores de la región.",
